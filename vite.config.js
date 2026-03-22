@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  // Base path = /portfolio/ to match https://mallabalaraju.github.io/portfolio/
-  base: '/portfolio/',
+  // Base path = /my-portfolio/ to match https://mallabalaraju.github.io/my-portfolio/
+  base: '/my-portfolio/',
 })
