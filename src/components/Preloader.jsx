@@ -41,13 +41,13 @@ export default function Preloader({ onComplete }) {
             <h1 className="text-3xl font-bold tracking-tight mb-2">
               <span className="gradient-text">{personal.shortName}</span>
             </h1>
-            <p className="text-xs font-mono text-muted-fg tracking-widest uppercase mb-8">
+            <p className="text-xs font-mono tracking-widest uppercase mb-8" style={{ color: 'var(--muted-text)' }}>
               Loading Experience
             </p>
           </motion.div>
 
           {/* Progress bar track */}
-          <div className="w-48 h-[2px] bg-muted rounded-full overflow-hidden">
+          <div className="w-48 h-[2px] rounded-full overflow-hidden" style={{ background: 'var(--glass-border)' }}>
             <motion.div
               className="h-full rounded-full"
               style={{
@@ -58,7 +58,7 @@ export default function Preloader({ onComplete }) {
             />
           </div>
 
-          <p className="text-xs font-mono text-muted-fg mt-3">
+          <p className="text-xs font-mono mt-3" style={{ color: 'var(--muted-text)' }}>
             {Math.min(Math.round(progress), 100)}%
           </p>
         </motion.div>
