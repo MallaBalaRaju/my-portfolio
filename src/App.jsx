@@ -1,7 +1,6 @@
 import { useState, useCallback } from 'react'
 
 // Layout & global UI
-import CustomCursor      from './components/CustomCursor'
 import Preloader         from './components/Preloader'
 import ScrollProgress    from './components/ScrollProgress'
 import ParticleBackground from './components/ParticleBackground'
@@ -28,7 +27,6 @@ export default function App() {
 
       <div className="min-h-screen relative">
         {/* ── Global UI overlays ── */}
-        <CustomCursor />
         <ScrollProgress />
         <ParticleBackground />
 
