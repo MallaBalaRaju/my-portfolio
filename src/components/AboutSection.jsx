@@ -63,7 +63,7 @@ export default function AboutSection() {
               >
                 {/* Icon badge */}
                 <div className="p-2.5 rounded-lg w-fit mb-4"
-                     style={{ background: 'hsla(250,90%,65%,0.1)', color: 'hsl(250 90% 65%)' }}>
+                     style={{ background: 'var(--chip-bg)', color: 'var(--p1)' }}>
                   <Icon className="w-5 h-5" />
                 </div>
                 <h3 className="text-sm font-semibold text-white mb-1">{item.label}</h3>

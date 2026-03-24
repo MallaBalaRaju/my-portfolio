@@ -72,7 +72,7 @@ export default function ContactSection() {
               {/* Icon */}
               <div
                 className="p-2.5 rounded-lg flex-shrink-0"
-                style={{ background: 'hsla(250,90%,65%,0.1)', color: 'hsl(250 90% 65%)' }}
+                style={{ background: 'var(--chip-bg)', color: 'var(--p1)' }}
               >
                 <link.icon className="w-5 h-5" />
               </div>

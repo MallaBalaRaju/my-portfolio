@@ -37,7 +37,7 @@ export default function EducationSection() {
                 {/* Icon */}
                 <div
                   className="p-2.5 rounded-lg mt-0.5 flex-shrink-0"
-                  style={{ background: 'hsla(250,90%,65%,0.1)', color: 'hsl(250 90% 65%)' }}
+                  style={{ background: 'var(--chip-bg)', color: 'var(--p1)' }}
                 >
                   <GraduationCap className="w-5 h-5" />
                 </div>
@@ -67,7 +67,7 @@ export default function EducationSection() {
 
                   {/* Grade + highlight chips */}
                   <div className="flex items-center gap-3 mt-3 flex-wrap">
-                    <span className="skill-chip text-xs" style={{ color: 'hsl(250 90% 65%)' }}>
+                    <span className="skill-chip text-xs" style={{ color: 'var(--p1)' }}>
                       {edu.grade}
                     </span>
                     {edu.highlight && (

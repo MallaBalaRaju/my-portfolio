@@ -24,9 +24,9 @@ function ProjectCard({ project, onClick, index }) {
                 className="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5
                            rounded-full border"
                 style={{
-                  background:   'hsla(250,90%,65%,0.1)',
-                  color:        'hsl(250 90% 65%)',
-                  borderColor:  'hsla(250,90%,65%,0.2)',
+                  background:   'var(--chip-bg)',
+                  color:        'var(--p2)',
+                  borderColor:  'var(--chip-border)',
                 }}
               >
                 Featured
@@ -116,7 +116,7 @@ function ProjectModal({ project, onClose }) {
             <li key={i} className="text-sm text-muted-fg flex items-start gap-2">
               <span
                 className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
-                style={{ background: 'hsl(250 90% 65%)' }}
+                style={{ background: 'var(--p1)' }}
               />
               {d}
             </li>

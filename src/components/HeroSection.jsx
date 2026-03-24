@@ -25,16 +25,6 @@ export default function HeroSection() {
       id="hero"
       className="min-h-screen flex items-center justify-center relative px-4 overflow-hidden"
     >
-      {/* Floating gradient orbs */}
-      <div
-        className="floating-orb top-1/4 -left-40"
-        style={{ background: 'var(--p1)' }}
-      />
-      <div
-        className="floating-orb bottom-1/4 -right-40"
-        style={{ background: 'var(--p2)' }}
-      />
-
       <motion.div
         className="container max-w-4xl mx-auto text-center relative z-10"
         variants={container}
@@ -100,7 +90,18 @@ export default function HeroSection() {
             <ArrowDown className="w-4 h-4" />
           </a>
 
-
+          {/* Download CV */}
+          <a
+            href={socials.resume}
+            download
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg
+                       glass text-white font-medium text-sm
+                       hover:border-primary/30 active:scale-95
+                       transition-all duration-200"
+          >
+            Download CV
+            <Download className="w-4 h-4" />
+          </a>
 
           {/* Get in Touch */}
           <a

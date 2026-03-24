@@ -53,7 +53,7 @@ export default function ExperienceSection() {
                       <div className="flex items-center gap-2">
                         <Icon
                           className="w-4 h-4 flex-shrink-0"
-                          style={{ color: 'hsl(250 90% 65%)' }}
+                          style={{ color: 'var(--p1)' }}
                         />
                         <h3 className="text-sm font-semibold text-white">{item.title}</h3>
                       </div>
@@ -61,7 +61,7 @@ export default function ExperienceSection() {
                         {item.date}
                       </span>
                     </div>
-                    <p className="text-xs font-mono mb-2" style={{ color: 'hsla(250,90%,65%,0.7)' }}>
+                    <p className="text-xs font-mono mb-2" style={{ color: 'var(--p1)' }}>
                       {item.org}
                     </p>
                     <p className="text-sm text-muted-fg leading-relaxed">{item.desc}</p>

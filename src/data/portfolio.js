@@ -19,7 +19,7 @@ export const socials = {
   linkedin: 'https://www.linkedin.com/in/malla-balaraju/',
   email:    'mailto:mallabalaraju7@gmail.com',
   phone:    'tel:+919989273051',
-  resume:   '/Malla_Bala_Raju_Resume.pdf',
+  resume:   'Malla_Bala_Raju_Resume.pdf',
 }
 
 export const about = {

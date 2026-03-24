@@ -13,6 +13,9 @@
     --primary2-s: 90%;
     --primary2-l: 55%;
 
+    --p1: hsl(var(--primary-h) var(--primary-s) var(--primary-l));
+    --p2: hsl(var(--primary2-h) var(--primary2-s) var(--primary2-l));
+
     --bg-color: hsl(225 20% 96%);
     --text-main: hsl(225 30% 10%);
     
@@ -36,6 +39,9 @@
     --primary2-h: 260;
     --primary2-s: 90%;
     --primary2-l: 65%;
+
+    --p1: hsl(var(--primary-h) var(--primary-s) var(--primary-l));
+    --p2: hsl(var(--primary2-h) var(--primary2-s) var(--primary2-l));
 
     --bg-color: hsl(225 35% 6%);
     --text-main: hsl(210 100% 98%);
@@ -183,13 +189,13 @@
     height: 600px;
     border-radius: 50%;
     filter: blur(140px);
-    opacity: 0.08;
+    opacity: 0.12;
     pointer-events: none;
     z-index: 0;
   }
 
   .dark .floating-orb {
-    opacity: 0.1;
+    opacity: 0.18;
   }
 
   a, button, [role="button"] { cursor: pointer; }
