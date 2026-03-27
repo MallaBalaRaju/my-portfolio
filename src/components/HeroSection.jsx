@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles } from 'lucide-react'
+import { ArrowDown, Github, Linkedin, Mail, Sparkles } from 'lucide-react'
 import { personal, socials } from '../data/portfolio'
 
 // Stagger container for child animations
@@ -90,18 +90,7 @@ export default function HeroSection() {
             <ArrowDown className="w-4 h-4" />
           </a>
 
-          {/* Download CV */}
-          <a
-            href={socials.resume}
-            download
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg
-                       glass text-white font-medium text-sm
-                       hover:border-primary/30 active:scale-95
-                       transition-all duration-200"
-          >
-            Download CV
-            <Download className="w-4 h-4" />
-          </a>
+
 
           {/* Get in Touch */}
           <a
