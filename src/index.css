@@ -62,6 +62,48 @@
 
   html { scroll-behavior: smooth; }
 
+  /* Skip-to-content link for keyboard users */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-link:focus {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: auto;
+    height: auto;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    background: hsl(var(--primary-h) var(--primary-s) var(--primary-l));
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    z-index: 9999;
+    outline: none;
+  }
+
+  /* Keyboard focus ring — visible for all interactive elements */
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary-h) var(--primary-s) var(--primary-l));
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Suppress all motion for users who opt out */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
   body {
     background-color: var(--bg-color);
     background-image: var(--grid-pattern);

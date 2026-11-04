@@ -1,16 +1,31 @@
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Mail, Sparkles } from 'lucide-react'
+import { ArrowDown, Download, Github, Linkedin, Mail } from 'lucide-react'
 import { personal, socials } from '../data/portfolio'
 
-// Stagger container for child animations
+// Respect prefers-reduced-motion — if the user opts out of motion,
+// collapse all durations to 0 and disable stagger.
+const prefersReducedMotion =
+  typeof window !== 'undefined' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+  show: {
+    transition: prefersReducedMotion
+      ? {}
+      : { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
 }
 
 const item = {
-  hidden: { opacity: 0, y: 24 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: prefersReducedMotion
+      ? { duration: 0 }
+      : { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
 }
 
 const socialLinks = [
@@ -23,6 +38,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
+      aria-label="Introduction"
       className="min-h-screen flex items-center justify-center relative px-4 overflow-hidden"
     >
       <motion.div
@@ -41,12 +57,12 @@ export default function HeroSection() {
               border:     '1px solid hsla(var(--primary-h), var(--primary-s), var(--primary-l), 0.15)',
             }}
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden="true" />
             {personal.available ? 'Open to opportunities' : 'Currently unavailable'}
           </span>
         </motion.div>
 
-        {/* Name */}
+        {/* Name — single h1 on the page */}
         <motion.h1
           variants={item}
           className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] leading-[0.9] mb-6"
@@ -84,13 +100,27 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg
                        bg-primary text-white font-medium text-sm
                        hover:brightness-110 active:scale-95
-                       transition-all duration-200 glow-border"
+                       transition-all duration-200 glow-border
+                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
           >
             View Projects
-            <ArrowDown className="w-4 h-4" />
+            <ArrowDown className="w-4 h-4" aria-hidden="true" />
           </a>
 
-
+          {/* Download Resume — prominent hero CTA */}
+          <a
+            href={socials.resume}
+            download
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg
+                       glass text-white font-medium text-sm
+                       hover:border-primary/40 active:scale-95
+                       transition-all duration-200
+                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+            aria-label="Download Malla Bala Raju resume PDF"
+          >
+            <Download className="w-4 h-4" aria-hidden="true" />
+            Download Resume
+          </a>
 
           {/* Get in Touch */}
           <a
@@ -98,7 +128,8 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg
                        glass text-white font-medium text-sm
                        hover:border-primary/30 active:scale-95
-                       transition-all duration-200"
+                       transition-all duration-200
+                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
           >
             Get in Touch
           </a>
@@ -117,16 +148,17 @@ export default function HeroSection() {
               rel="noopener noreferrer"
               aria-label={label}
               className="p-3 rounded-xl glass glass-hover text-muted-fg
-                         hover:text-white transition-all duration-300"
+                         hover:text-white transition-all duration-300
+                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
             >
-              <Icon className="w-5 h-5" />
+              <Icon className="w-5 h-5" aria-hidden="true" />
             </a>
           ))}
         </motion.div>
       </motion.div>
 
       {/* Bottom divider */}
-      <div className="section-line absolute bottom-0 left-0 right-0" />
+      <div className="section-line absolute bottom-0 left-0 right-0" aria-hidden="true" />
     </section>
   )
 }
