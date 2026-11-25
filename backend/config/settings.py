@@ -1,6 +1,5 @@
 from pathlib import Path
 import os
-import dj_database_url
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,11 +26,8 @@ if not DEBUG:
 
 GITHUB_USERNAME = os.getenv("GITHUB_USERNAME", "MallaBalaRaju")
 
-database_url = os.getenv("DATABASE_URL", "").strip()
 DATABASES = {
-    "default": dj_database_url.parse(database_url, conn_max_age=600)
-    if database_url
-    else {
+    "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }

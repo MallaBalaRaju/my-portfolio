@@ -19,8 +19,6 @@ services:
         value: "False"
       - key: ALLOWED_HOSTS
         value: malla-portfolio-django.onrender.com
-      - key: DATABASE_URL
-        sync: false
       - key: GITHUB_USERNAME
         value: MallaBalaRaju
       - key: PYTHON_VERSION
