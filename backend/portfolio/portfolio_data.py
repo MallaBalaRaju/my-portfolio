@@ -20,7 +20,6 @@ PERSONAL_DATA = {
 
 SOCIALS_DATA = {
     "github": "https://github.com/MallaBalaRaju",
-    "github_repos": "https://github.com/MallaBalaRaju?tab=repositories",
     "linkedin": "https://www.linkedin.com/in/malla-balaraju/",
     "email": "mailto:mallabalaraju7@gmail.com",
     "phone": "tel:+919989273051",
@@ -207,7 +206,6 @@ NAV_LINKS = [
     {"label": "About", "href": "#about"},
     {"label": "Skills", "href": "#skills"},
     {"label": "Projects", "href": "#projects"},
-    {"label": "Repos", "href": "#repos"},
     {"label": "Experience", "href": "#experience"},
     {"label": "Education", "href": "#education"},
     {"label": "Contact", "href": "#contact"},
