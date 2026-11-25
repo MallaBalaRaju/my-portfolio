@@ -2,6 +2,7 @@ services:
   - type: web
     name: malla-portfolio-django
     runtime: python
+    plan: free
     region: singapore
     branch: django-rewrite
     buildCommand: |
