@@ -10,17 +10,17 @@ PERSONAL_DATA = {
     "title": "Full-Stack & DevOps Engineer",
     "subtitle": (
         "B.Tech CSE student at Lovely Professional University (2023–2027). "
-        "I build web applications with Django, FastAPI, and Next.js, and deploy them "
-        "with Docker, Kubernetes, Terraform, and CI/CD."
+        "I build web applications with Django, FastAPI, Next.js, and Node.js, and deploy "
+        "containerised services with Docker, Kubernetes, Jenkins, and Prometheus/Grafana."
     ),
     "email": "mallabalaraju7@gmail.com",
     "phone": "+91 9989273051",
-    "location": "Visakhapatnam / Phagwara, India",
+    "location": "Srikakulam, AP / Phagwara, Punjab",
     "availability_label": "Open to DevOps, Cloud & Full-Stack internships",
     "available": True,
     "hero_metrics": [
         {"label": "Focus", "value": "DevOps & Full-Stack"},
-        {"label": "Core Infra", "value": "Docker · K8s · Terraform"},
+        {"label": "Core Infra", "value": "Docker · K8s · Jenkins"},
         {"label": "Backends", "value": "Django · FastAPI · Node.js"},
     ],
 }
@@ -30,7 +30,7 @@ RESUMES_DATA = [
         "slug": "devops",
         "label": "DevOps & Cloud",
         "short_label": "DevOps / Cloud CV",
-        "focus": "Docker, Kubernetes, Terraform, AWS, CI/CD, Linux",
+        "focus": "Docker, Kubernetes, Jenkins CI/CD, Prometheus, Grafana, Linux",
         "filename": "Malla_Bala_Raju_DevOps_Resume.pdf",
         "static_path": "portfolio/files/Malla_Bala_Raju_DevOps_Resume.pdf",
     },
@@ -38,7 +38,7 @@ RESUMES_DATA = [
         "slug": "fullstack",
         "label": "Full-Stack & Data",
         "short_label": "Full-Stack / Data CV",
-        "focus": "Django, Next.js, FastAPI, MongoDB, MySQL, Python ML",
+        "focus": "Next.js, Django, Node.js, Pandas, Scikit-learn, Power BI",
         "filename": "Malla_Bala_Raju_FullStack_Resume.pdf",
         "static_path": "portfolio/files/Malla_Bala_Raju_FullStack_Resume.pdf",
     },
@@ -46,7 +46,6 @@ RESUMES_DATA = [
 
 SOCIALS_DATA = {
     "github": "https://github.com/MallaBalaRaju",
-    "github_repos": "https://github.com/MallaBalaRaju?tab=repositories",
     "linkedin": "https://www.linkedin.com/in/malla-balaraju/",
     "email": "mailto:mallabalaraju7@gmail.com",
     "phone": "tel:+919989273051",
@@ -56,35 +55,36 @@ ABOUT_DATA = {
     "paragraphs": [
         (
             "I'm a Computer Science Engineering student at Lovely Professional University "
-            "(Minor in Data Science) focused on DevOps, Cloud infrastructure, and Full-Stack "
-            "engineering. I enjoy taking software from local code to repeatable containerised "
-            "deployments."
+            "(Minor in Data Science, CGPA 6.9) focused on DevOps, Cloud infrastructure, "
+            "and Full-Stack engineering. I enjoy taking software from local code to "
+            "repeatable containerised deployments."
         ),
         (
-            "Across recent builds, I have provisioned AWS infrastructure with Terraform, "
-            "orchestrated multi-service apps on Docker and Kubernetes with Prometheus/Grafana "
-            "monitoring, built Django and FastAPI REST backends, and shipped Next.js and "
-            "TypeScript interfaces."
+            "Across recent projects, I have automated CI/CD builds with Jenkins and GitHub "
+            "Actions, orchestrated multi-service apps on Docker and Kubernetes (Minikube) "
+            "with Prometheus and Grafana monitoring, built Django and FastAPI REST backends, "
+            "and shipped Next.js and TypeScript interfaces."
         ),
         (
-            "Alongside backend and cloud work, I use Python, MongoDB, MySQL, and scikit-learn "
-            "/ XGBoost for data validation, anomaly detection, and analytical dashboards."
+            "Alongside backend and cloud work, I hold Oracle Cloud AI & Data Platform "
+            "certifications and use Python, MongoDB, MySQL, and scikit-learn / XGBoost "
+            "for data deduplication, anomaly detection, and analytical dashboards."
         ),
     ],
     "highlights": [
         {
             "label": "DevOps & Cloud",
-            "desc": "Docker, Kubernetes, Terraform, Jenkins, GitHub Actions, Prometheus & Grafana",
+            "desc": "Docker, Docker Compose, Kubernetes, Jenkins, Terraform, Prometheus & Grafana",
             "icon": "Cloud",
         },
         {
             "label": "Full-Stack Engineering",
-            "desc": "Django, FastAPI, Next.js 15, Node.js, TypeScript, MySQL & MongoDB",
+            "desc": "Django, FastAPI, Next.js 15, Node.js, Express, MySQL, SQLite & MongoDB",
             "icon": "Code2",
         },
         {
             "label": "Data & Applied ML",
-            "desc": "Python, Pandas, Scikit-learn, XGBoost, TensorFlow & Power BI",
+            "desc": "Python, Pandas, NumPy, Scikit-learn, XGBoost, TensorFlow & Power BI",
             "icon": "Database",
         },
     ],
@@ -95,17 +95,18 @@ SKILLS_DATA = [
         "category": "Cloud & DevOps",
         "items": [
             "Docker",
-            "Kubernetes",
-            "Terraform",
-            "AWS (EC2 / ECR)",
+            "Docker Compose",
+            "Kubernetes (Minikube)",
             "Jenkins",
             "GitHub Actions",
-            "Nginx",
+            "Terraform",
             "Prometheus & Grafana",
+            "Linux (Ubuntu)",
+            "Nginx",
         ],
     },
     {
-        "category": "Backend & APIs",
+        "category": "Backend & Databases",
         "items": [
             "Django",
             "FastAPI",
@@ -114,17 +115,18 @@ SKILLS_DATA = [
             "REST APIs",
             "MySQL",
             "MongoDB",
-            "Prisma",
+            "SQLite",
         ],
     },
     {
         "category": "Frontend",
         "items": [
-            "Next.js 15",
+            "Next.js",
             "React",
             "TypeScript",
             "Tailwind CSS",
-            "JavaScript (ES2024)",
+            "HTML5 & CSS3",
+            "JavaScript",
             "Chart.js",
         ],
     },
@@ -137,8 +139,8 @@ SKILLS_DATA = [
             "Scikit-learn",
             "XGBoost",
             "TensorFlow",
+            "Matplotlib",
             "Power BI",
-            "Matplotlib & Seaborn",
         ],
     },
     {
@@ -151,14 +153,46 @@ EXPERIENCE_DATA = [
     {
         "type": "training",
         "icon": "Briefcase",
-        "title": "Data Structures & Algorithms Training",
+        "title": "Smart Resource Management Application Development",
         "org": "Lovely Professional University",
         "date": "Jun 2025 – Jul 2025",
         "desc": (
-            "Intensive training on algorithmic problem-solving, OOP, and system design; "
-            "built Smart Resource Predictor using Decision Tree, XGBoost, and Neural "
-            "Network models (97% forecast accuracy) served via Flask."
+            "Summer training project focused on optimising household energy and water "
+            "consumption using Python, Scikit-learn, Flask, and MySQL with interactive "
+            "monitoring dashboards."
         ),
+    },
+    {
+        "type": "certificate",
+        "icon": "Award",
+        "title": "Full Stack Developer Course",
+        "org": "Simplilearn",
+        "date": "May 2026",
+        "desc": "End-to-end full-stack web application design, backend APIs, and frontend integration.",
+    },
+    {
+        "type": "certificate",
+        "icon": "Award",
+        "title": "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+        "org": "Oracle",
+        "date": "Apr 2026",
+        "desc": "Cloud AI foundations, machine learning services, and generative AI workloads on OCI.",
+    },
+    {
+        "type": "certificate",
+        "icon": "Award",
+        "title": "Oracle Data Platform 2025 Certified Foundations Associate",
+        "org": "Oracle",
+        "date": "Apr 2026",
+        "desc": "Oracle data management, cloud database services, and analytics platform architecture.",
+    },
+    {
+        "type": "certificate",
+        "icon": "Award",
+        "title": "ChatGPT-4 Prompt Engineering: Generative AI & LLM",
+        "org": "Infosys Springboard",
+        "date": "Aug 2025",
+        "desc": "Structured prompt design and evaluation patterns for LLM-assisted workflows.",
     },
     {
         "type": "certificate",
@@ -173,27 +207,19 @@ EXPERIENCE_DATA = [
     },
     {
         "type": "certificate",
-        "icon": "Award",
-        "title": "ChatGPT-4 Prompt Engineering",
-        "org": "Infosys Springboard",
-        "date": "Aug 2025",
-        "desc": "Structured prompt design and evaluation patterns for LLM-assisted workflows.",
-    },
-    {
-        "type": "certificate",
-        "icon": "Award",
-        "title": "Generative AI Apps with No-Code Tools",
-        "org": "Infosys Springboard",
-        "date": "Aug 2025",
-        "desc": "Rapid prototyping and workflow automation using generative AI platforms.",
-    },
-    {
-        "type": "certificate",
         "icon": "BookOpen",
         "title": "Computer Communications",
         "org": "Coursera",
         "date": "Nov 2024",
         "desc": "Networking layers, TCP/IP fundamentals, routing, and transport protocols.",
+    },
+    {
+        "type": "certificate",
+        "icon": "BookOpen",
+        "title": "Introduction to Hardware and Operating Systems",
+        "org": "Coursera",
+        "date": "Sep 2024",
+        "desc": "Computer hardware architecture, OS internals, memory management, and Linux basics.",
     },
     {
         "type": "activity",
@@ -212,7 +238,7 @@ EDUCATION_DATA = [
         "school": "Lovely Professional University",
         "location": "Phagwara, Punjab",
         "period": "Aug 2023 – Aug 2027",
-        "grade": "CGPA: 6.6",
+        "grade": "CGPA: 6.9",
         "highlight": "Minor in Data Science",
     },
     {

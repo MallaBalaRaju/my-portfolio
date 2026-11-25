@@ -5,40 +5,38 @@
     "fields": {
       "slug": "luxeshop-ecommerce",
       "title": "LuxeShop-ECommerce",
-      "subtitle": "Cloud-Native E-Commerce & DevOps Pipeline",
+      "subtitle": "Cloud-Native DevOps E-Commerce Platform",
       "category": "DevOps & Cloud",
-      "outcome": "Containerised full-stack e-commerce platform orchestrated on Kubernetes with Terraform AWS provisioning, Jenkins CI/CD, and Prometheus/Grafana observability.",
-      "description": "Multi-tier e-commerce system pairing an Nginx-fronted web app and Node.js/Express API with MongoDB, automated via Jenkins pipelines, Terraform IaC, Docker, Kubernetes, and Prometheus/Grafana metrics.",
+      "outcome": "Containerised Node.js/Express and MongoDB services on Kubernetes (Minikube) with Jenkins CI/CD automation and Prometheus/Grafana observability.",
+      "description": "Cloud-native e-commerce platform exposing REST APIs for authentication, products, and orders, automated through Jenkins pipelines, Docker Compose, Kubernetes, and Prometheus/Grafana.",
       "architecture": [
         "Nginx Proxy",
         "Node.js API",
         "MongoDB",
         "Docker + K8s",
-        "Terraform AWS",
-        "Prometheus"
+        "Jenkins CI/CD",
+        "Prometheus + Grafana"
       ],
       "details": [
-        "Containerised Nginx frontend and Node.js/Express backend services with Docker and Docker Compose",
-        "Defined Kubernetes deployment manifests and Jenkins CI/CD automation pipelines",
-        "Provisioned AWS ECR and EC2 infrastructure using Terraform IaC",
-        "Exposed backend /metrics endpoints scraped by Prometheus and visualised in Grafana"
+        "Built a modular Node.js, Express.js, and MongoDB backend exposing REST APIs for product, user, and order management",
+        "Designed a Jenkins CI/CD pipeline integrated with GitHub for automated build, test, and deployment",
+        "Containerised frontend, backend, and database services with Docker/Docker Compose and orchestrated on Kubernetes (Minikube)",
+        "Configured Prometheus metric collection and Grafana dashboards for real-time system health monitoring"
       ],
       "stack": [
         "Docker",
+        "Docker Compose",
         "Kubernetes",
-        "Terraform",
-        "AWS ECR/EC2",
         "Jenkins",
         "Node.js",
         "Express.js",
         "MongoDB",
-        "Nginx",
         "Prometheus",
         "Grafana"
       ],
       "github_url": "https://github.com/MallaBalaRaju/LuxeShop-ECommerce",
       "live_url": "",
-      "date": "2026",
+      "date": "Apr 2026",
       "featured": true,
       "order": 1
     }
@@ -49,33 +47,29 @@
     "fields": {
       "slug": "buyx",
       "title": "buyX",
-      "subtitle": "Full-Stack E-Commerce Platform",
+      "subtitle": "Premium E-Commerce Platform",
       "category": "Full-Stack",
-      "outcome": "Migrated a legacy Django storefront to Next.js 15 SSR, cutting initial page-load latency and unifying customer and distributor workflows.",
-      "description": "Dual-sided e-commerce platform for customers and distributors with product catalog browsing, inventory management, order tracking, and OTP/payment workflows.",
+      "outcome": "Team-built dual-sided e-commerce platform pairing Next.js/React/Tailwind UI with Django/Python authentication and catalog APIs.",
+      "description": "Full-stack e-commerce platform supporting customer and distributor workflows with mobile-first UI components, authentication, and product catalog management.",
       "architecture": [
-        "Next.js 15 SSR",
-        "Tailwind UI",
-        "REST API + Prisma",
-        "MySQL",
-        "Razorpay + Twilio"
+        "Next.js + React",
+        "Tailwind CSS",
+        "Django + Python",
+        "SQLite / MySQL"
       ],
       "details": [
-        "Migrated legacy Django-based storefront to Next.js 15 for faster rendering and modularity",
-        "Built responsive UI components using Tailwind CSS and shadcn/ui",
-        "Integrated Razorpay checkout and Twilio SMS/OTP notifications",
-        "Designed relational schemas and REST endpoints backed by Prisma ORM and MySQL"
+        "Collaborated in a four-member team supporting customer and distributor workflows",
+        "Built responsive, reusable UI components with Next.js, React, and Tailwind CSS",
+        "Implemented user authentication, product catalog management, and backend integration in Django and Python",
+        "Performed application testing, debugging, and performance optimisation"
       ],
       "stack": [
-        "Next.js 15",
+        "Next.js",
         "React",
         "Django",
         "Python",
         "Tailwind CSS",
-        "Prisma",
-        "MySQL",
-        "Razorpay API",
-        "Twilio"
+        "SQLite"
       ],
       "github_url": "https://github.com/MallaBalaRaju/buyX",
       "live_url": "",
