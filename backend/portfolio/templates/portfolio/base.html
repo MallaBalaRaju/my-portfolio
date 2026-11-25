@@ -6,33 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary meta -->
-    <title>{% block title %}{{ personal.name }} | Full-Stack &amp; DevOps Developer{% endblock %}</title>
+    <title>{% block title %}{{ personal.name }} | {{ personal.title }}{% endblock %}</title>
     <meta
       name="description"
-      content="Malla Bala Raju — B.Tech CSE student (LPU 2023–2027) specialising in Full-Stack development (Next.js, React, Django) and DevOps/Cloud (Docker, CI/CD, GitHub Actions). Open to internships and fresher roles."
+      content="Malla Bala Raju — B.Tech CSE student (LPU 2023–2027) building web apps with Django, FastAPI, Next.js and deploying with Docker, Kubernetes, Terraform, and CI/CD."
     />
-    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="theme-color" content="#10B981" />
     <link
       rel="icon"
       type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e1a'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='24' fill='%2322d3ee'%3EMBR%3C/text%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23090D11'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='24' fill='%2310B981'%3EMBR%3C/text%3E%3C/svg%3E"
     />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="{{ personal.name }} | Full-Stack &amp; DevOps Developer" />
+    <meta property="og:title" content="{{ personal.name }} | {{ personal.title }}" />
     <meta
       property="og:description"
-      content="B.Tech CSE student (LPU 2023–2027) building production-ready web apps with Next.js, Django, Docker and CI/CD. Open to DevOps/Cloud/Full-Stack internships."
+      content="B.Tech CSE student (LPU 2023–2027) building web systems with Django, FastAPI, Next.js, Docker, Kubernetes, and Terraform."
     />
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/img/og-image.png' %}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Malla Bala Raju — Full-Stack and DevOps Engineer portfolio preview" />
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{ personal.name }} | Full-Stack &amp; DevOps Developer" />
+    <meta name="twitter:title" content="{{ personal.name }} | {{ personal.title }}" />
     <meta
       name="twitter:description"
-      content="B.Tech CSE student building scalable web apps and cloud deployments. Open to internships."
+      content="Full-Stack & DevOps Engineer — Django, FastAPI, Next.js, Docker, Kubernetes, Terraform."
     />
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'portfolio/img/og-image.png' %}" />
 
     <!-- JSON-LD Person schema -->
     <script type="application/ld+json">
@@ -41,7 +46,7 @@
       "@type": "Person",
       "name": "Malla Bala Raju",
       "email": "mailto:mallabalaraju7@gmail.com",
-      "jobTitle": "Full-Stack Developer & DevOps Enthusiast",
+      "jobTitle": "Full-Stack & DevOps Engineer",
       "alumniOf": {
         "@type": "CollegeOrUniversity",
         "name": "Lovely Professional University"

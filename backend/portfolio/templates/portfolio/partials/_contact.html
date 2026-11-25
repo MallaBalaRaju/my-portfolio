@@ -1,68 +1,71 @@
-<section id="contact" class="py-28 px-4 relative">
-  <div class="container max-w-4xl mx-auto">
-    <!-- Heading -->
-    <div class="text-center mb-12">
+{% load static %}
+<section id="contact" class="py-24 px-4 sm:px-6 relative">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10">
       <p class="text-xs font-mono text-primary mb-3 tracking-[0.2em] uppercase">
-        Contact
+        Contact &amp; Resumes
       </p>
       <h2 class="text-3xl md:text-4xl font-bold tracking-[-0.03em] text-white mb-4">
         Let&apos;s <span class="gradient-text">Connect</span>
       </h2>
-      <p class="text-muted-fg max-w-md mx-auto">
-        I&apos;m always open to discussing new opportunities, collaborations,
-        or just chatting about tech.
+      <p class="text-muted-fg max-w-md mx-auto text-sm md:text-base">
+        Open to DevOps, Cloud, and Full-Stack internships or entry-level engineering roles.
       </p>
     </div>
 
-    <!-- Contact cards grid -->
-    <div class="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+    <!-- Contact cards grid with One-Click Copy (Idea 2) -->
+    <div class="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto mb-8">
       <!-- Email -->
-      <a
-        href="{{ socials.email }}"
-        class="glass glass-hover rounded-xl p-5 flex items-center gap-4 transition-all duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-      >
+      <div class="glass glass-hover rounded-2xl p-5 flex items-center gap-4">
         <div class="p-2.5 rounded-lg flex-shrink-0" style="background: var(--chip-bg); color: var(--p1);" aria-hidden="true">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect width="20" height="16" x="2" y="4" rx="2"></rect>
             <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
           </svg>
         </div>
-        <div class="flex-1 min-w-0">
-          <p class="text-[11px] font-mono text-muted-fg/60 uppercase tracking-widest">Email</p>
-          <p class="text-sm text-white truncate">{{ personal.email }}</p>
-        </div>
-        <svg class="w-4 h-4 text-muted-fg/30 group-hover:text-primary transition-colors flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M7 7h10v10"></path>
-          <path d="M7 17 17 7"></path>
-        </svg>
-      </a>
+        <a href="{{ socials.email }}" class="flex-1 min-w-0 group">
+          <p class="text-[11px] font-mono text-muted-fg uppercase tracking-widest">Email</p>
+          <p class="text-sm text-white group-hover:text-primary transition-colors truncate">{{ personal.email }}</p>
+        </a>
+        <button
+          type="button"
+          data-copy="{{ personal.email }}"
+          data-copy-label="Email copied"
+          aria-label="Copy email address"
+          class="text-xs font-mono px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-muted-fg hover:text-white hover:border-primary/40 transition-colors flex-shrink-0"
+        >
+          Copy
+        </button>
+      </div>
 
       <!-- Phone -->
-      <a
-        href="{{ socials.phone }}"
-        class="glass glass-hover rounded-xl p-5 flex items-center gap-4 transition-all duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-      >
+      <div class="glass glass-hover rounded-2xl p-5 flex items-center gap-4">
         <div class="p-2.5 rounded-lg flex-shrink-0" style="background: var(--chip-bg); color: var(--p1);" aria-hidden="true">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
           </svg>
         </div>
-        <div class="flex-1 min-w-0">
-          <p class="text-[11px] font-mono text-muted-fg/60 uppercase tracking-widest">Phone</p>
-          <p class="text-sm text-white truncate">{{ personal.phone }}</p>
-        </div>
-        <svg class="w-4 h-4 text-muted-fg/30 group-hover:text-primary transition-colors flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M7 7h10v10"></path>
-          <path d="M7 17 17 7"></path>
-        </svg>
-      </a>
+        <a href="{{ socials.phone }}" class="flex-1 min-w-0 group">
+          <p class="text-[11px] font-mono text-muted-fg uppercase tracking-widest">Phone</p>
+          <p class="text-sm text-white group-hover:text-primary transition-colors truncate">{{ personal.phone }}</p>
+        </a>
+        <button
+          type="button"
+          data-copy="{{ personal.phone }}"
+          data-copy-label="Phone copied"
+          aria-label="Copy phone number"
+          class="text-xs font-mono px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-muted-fg hover:text-white hover:border-primary/40 transition-colors flex-shrink-0"
+        >
+          Copy
+        </button>
+      </div>
 
       <!-- LinkedIn -->
       <a
         href="{{ socials.linkedin }}"
         target="_blank"
         rel="noopener noreferrer"
-        class="glass glass-hover rounded-xl p-5 flex items-center gap-4 transition-all duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        class="glass glass-hover rounded-2xl p-5 flex items-center gap-4 group"
       >
         <div class="p-2.5 rounded-lg flex-shrink-0" style="background: var(--chip-bg); color: var(--p1);" aria-hidden="true">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -72,10 +75,10 @@
           </svg>
         </div>
         <div class="flex-1 min-w-0">
-          <p class="text-[11px] font-mono text-muted-fg/60 uppercase tracking-widest">LinkedIn</p>
+          <p class="text-[11px] font-mono text-muted-fg uppercase tracking-widest">LinkedIn</p>
           <p class="text-sm text-white truncate">linkedin.com/in/malla-balaraju</p>
         </div>
-        <svg class="w-4 h-4 text-muted-fg/30 group-hover:text-primary transition-colors flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg class="w-4 h-4 text-muted-fg group-hover:text-primary transition-colors flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M7 7h10v10"></path>
           <path d="M7 17 17 7"></path>
         </svg>
@@ -86,7 +89,7 @@
         href="{{ socials.github }}"
         target="_blank"
         rel="noopener noreferrer"
-        class="glass glass-hover rounded-xl p-5 flex items-center gap-4 transition-all duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        class="glass glass-hover rounded-2xl p-5 flex items-center gap-4 group"
       >
         <div class="p-2.5 rounded-lg flex-shrink-0" style="background: var(--chip-bg); color: var(--p1);" aria-hidden="true">
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -95,14 +98,44 @@
           </svg>
         </div>
         <div class="flex-1 min-w-0">
-          <p class="text-[11px] font-mono text-muted-fg/60 uppercase tracking-widest">GitHub</p>
+          <p class="text-[11px] font-mono text-muted-fg uppercase tracking-widest">GitHub</p>
           <p class="text-sm text-white truncate">github.com/MallaBalaRaju</p>
         </div>
-        <svg class="w-4 h-4 text-muted-fg/30 group-hover:text-primary transition-colors flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg class="w-4 h-4 text-muted-fg group-hover:text-primary transition-colors flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M7 7h10v10"></path>
           <path d="M7 17 17 7"></path>
         </svg>
       </a>
+    </div>
+
+    <!-- Dual Resumes Section -->
+    <div class="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+      {% for res in resumes %}
+        <div class="glass glass-hover rounded-2xl p-5 flex items-center justify-between gap-4">
+          <div class="min-w-0">
+            <p class="text-[10px] font-mono uppercase tracking-widest text-primary mb-0.5">Resume</p>
+            <h3 class="text-sm font-semibold text-white">{{ res.label }}</h3>
+            <p class="text-xs text-muted-fg truncate">{{ res.focus }}</p>
+          </div>
+          <div class="flex items-center gap-2 flex-shrink-0">
+            <a
+              href="{% static res.static_path %}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-mono px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-white hover:border-primary/40 transition-colors"
+            >
+              View
+            </a>
+            <a
+              href="{% static res.static_path %}"
+              download="{{ res.filename }}"
+              class="text-xs font-mono px-3 py-1.5 rounded-lg bg-primary text-[#04120D] font-semibold hover:brightness-110 transition-all"
+            >
+              PDF
+            </a>
+          </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </section>

@@ -7,8 +7,10 @@ class Project(models.Model):
     slug = models.SlugField(unique=True)
     title = models.CharField(max_length=120)
     subtitle = models.CharField(max_length=200)
+    category = models.CharField(max_length=40, default="Full-Stack")
     outcome = models.TextField(blank=True)
     description = models.TextField()
+    architecture = models.JSONField(default=list)
     details = models.JSONField(default=list)
     stack = models.JSONField(default=list)
     github_url = models.URLField(blank=True)
@@ -25,7 +27,7 @@ class Project(models.Model):
 
 
 class RepoOverride(models.Model):
-    """Admin curation rules applied to live GitHub repositories."""
+    """Admin curation rules retained for database schema compatibility."""
 
     repo_name = models.CharField(max_length=100, unique=True)
     hidden = models.BooleanField(default=False)

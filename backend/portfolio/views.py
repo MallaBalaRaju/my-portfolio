@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from django.shortcuts import render
+from django.templatetags.static import static
 
 from .models import Project
 from .portfolio_data import (
@@ -9,22 +10,27 @@ from .portfolio_data import (
     EXPERIENCE_DATA,
     NAV_LINKS,
     PERSONAL_DATA,
+    RESUMES_DATA,
     SKILLS_DATA,
     SOCIALS_DATA,
 )
 
 
 def index(request):
-    """Render the portfolio landing page with DB projects and profile content."""
+    """Render the portfolio landing page with DB projects, dual resumes, and profile content."""
     projects = list(Project.objects.all())
+    categories = ["All"] + list(dict.fromkeys(p.category for p in projects if p.category))
+
     projects_data = [
         {
             "id": p.pk,
             "slug": p.slug,
             "title": p.title,
             "subtitle": p.subtitle,
+            "category": p.category,
             "outcome": p.outcome,
             "description": p.description,
+            "architecture": p.architecture,
             "details": p.details,
             "stack": p.stack,
             "github_url": p.github_url,
@@ -35,12 +41,30 @@ def index(request):
         for p in projects
     ]
 
+    cmdk_data = {
+        "resumes": [
+            {
+                "label": r["label"],
+                "focus": r["focus"],
+                "url": static(r["static_path"]),
+            }
+            for r in RESUMES_DATA
+        ],
+        "email": PERSONAL_DATA["email"],
+        "phone": PERSONAL_DATA["phone"],
+        "github": SOCIALS_DATA["github"],
+        "linkedin": SOCIALS_DATA["linkedin"],
+    }
+
     return render(
         request,
         "portfolio/index.html",
         {
             "projects": projects,
+            "categories": categories,
             "projects_data": projects_data,
+            "cmdk_data": cmdk_data,
+            "resumes": RESUMES_DATA,
             "personal": PERSONAL_DATA,
             "socials": SOCIALS_DATA,
             "about": ABOUT_DATA,

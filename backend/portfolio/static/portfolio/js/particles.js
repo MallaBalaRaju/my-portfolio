@@ -14,7 +14,6 @@
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
-  let animId = null;
   let particles = [];
   let frame = 0;
 
@@ -24,14 +23,14 @@
   }
 
   function createParticles() {
-    const count = Math.floor((canvas.width * canvas.height) / 25000);
+    const count = Math.floor((canvas.width * canvas.height) / 30000);
     particles = Array.from({ length: count }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      size: Math.random() * 1.5 + 0.5,
-      opacity: Math.random() * 0.5 + 0.1,
+      vx: (Math.random() - 0.5) * 0.22,
+      vy: (Math.random() - 0.5) * 0.22,
+      size: Math.random() * 1.4 + 0.5,
+      opacity: Math.random() * 0.4 + 0.1,
       pulse: Math.random() * Math.PI * 2,
     }));
   }
@@ -44,7 +43,7 @@
       const p = particles[i];
       p.x += p.vx;
       p.y += p.vy;
-      p.pulse += 0.015;
+      p.pulse += 0.014;
 
       if (p.x < 0) p.x = canvas.width;
       if (p.x > canvas.width) p.x = 0;
@@ -54,7 +53,7 @@
       const o = p.opacity * (0.6 + 0.4 * Math.sin(p.pulse));
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `hsla(250, 90%, 75%, ${o})`;
+      ctx.fillStyle = `rgba(16, 185, 129, ${o})`;
       ctx.fill();
     }
 
@@ -64,12 +63,12 @@
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = dx * dx + dy * dy;
-          if (dist < 120 * 120) {
+          if (dist < 115 * 115) {
             const d = Math.sqrt(dist);
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `hsla(250, 90%, 65%, ${0.08 * (1 - d / 120)})`;
+            ctx.strokeStyle = `rgba(56, 189, 248, ${0.07 * (1 - d / 115)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -77,7 +76,7 @@
       }
     }
 
-    animId = requestAnimationFrame(draw);
+    requestAnimationFrame(draw);
   }
 
   resize();

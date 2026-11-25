@@ -1,108 +1,125 @@
 # Malla Bala Raju — Portfolio
 
-> **Live site:** [mallabalaraju.github.io/my-portfolio](https://mallabalaraju.github.io/my-portfolio/)
+> **Live site:** [malla-portfolio-django.onrender.com](https://malla-portfolio-django.onrender.com/)  
+> **GitHub Pages redirect (`main`):** [mallabalaraju.github.io/my-portfolio](https://mallabalaraju.github.io/my-portfolio/)
 
-A fast, accessible, single-page portfolio targeting **Full-Stack Developer** and **DevOps/Cloud** roles.  
-Built with React 18, Vite, Tailwind CSS, and Framer Motion — deployed automatically to GitHub Pages via GitHub Actions.
+Personal engineering portfolio for **Malla Bala Raju** (B.Tech CSE, Lovely Professional University, 2023–2027), built with **Django 6**, **Tailwind CSS v3.4 CLI**, and **Vanilla JavaScript**, deployed on **Render** from the `django-rewrite` branch.
 
 ---
 
-<!-- ⚠️ Replace the placeholder below with a real screenshot once the site is updated -->
-<!-- ![Portfolio screenshot](./public/og-image.png) -->
+## Features
 
-## ✨ Features
+- **Obsidian & Signal Mint UI** (`#090D11` background, `#10B981` primary, `#38BDF8` technical accent) compiled cleanly via Tailwind CLI.
+- **Dual Targeted Resumes**:
+  - **DevOps & Cloud Resume** (`Malla_Bala_Raju_DevOps_Resume.pdf`)
+  - **Full-Stack & Data Resume** (`Malla_Bala_Raju_FullStack_Resume.pdf`)
+  - Accessible from the Navbar `Resumes` menu, Hero CTAs, `Ctrl+K` palette, and Contact section (inline View + PDF Download).
+- **7 Filterable Projects** backed by Django ORM (`Project` model) with category filters (`All`, `DevOps & Cloud`, `Full-Stack`, `Data & ML`), architecture flow diagrams, and an interactive detail modal.
+- **`Ctrl+K` / `/` Command Palette**: Keyboard-driven quick jump across sections, projects, both resumes, and clipboard copy actions.
+- **One-Click Contact Copy + Toast**: Copy email or phone directly from the Contact section.
+- **Accessibility & SEO**: Skip-to-content link, `prefers-reduced-motion` guards, keyboard modal controls, Open Graph + Twitter Card tags with a `1200×630` preview image, and JSON-LD `Person` schema.
 
-- **Targeted positioning** — leads with Full-Stack + DevOps/Cloud, backed by NPTEL Cloud Computing certification and Docker usage
-- **Skill categories** — Cloud & DevOps · Frontend · Backend · Data Science & ML · Languages & Tools
-- **Project cards** — one-line outcome, full tech stack, GitHub link, live-demo link (or ⚠ flag when missing)
-- **Download Resume** button in navbar and hero
-- **SEO-ready** — OG tags, Twitter Card, JSON-LD Person schema, canonical URL, `theme-color`
-- **Accessible** — skip-to-content link, ARIA labels, keyboard focus rings, `prefers-reduced-motion` guard on all Framer Motion animations
-- **Performance** — lazy-loaded below-fold sections (`React.lazy` + `Suspense`), optimised font weights only
-- **GitHub Actions CI/CD** — lint → build → deploy on every push to `main`
+---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
-|-------|-----------|
-| Framework | React 18 + Vite 5 |
-| Styling | Tailwind CSS 3 + custom CSS variables |
-| Animation | Framer Motion 11 |
-| Icons | Lucide React |
-| Linting | ESLint + jsx-a11y + react-hooks |
-| Formatting | Prettier |
-| Deployment | GitHub Pages via GitHub Actions |
+|---|---|
+| Backend | Python 3.14, Django 6.1, Gunicorn |
+| Database | SQLite (`backend/db.sqlite3`, auto-seeded from `initial_data.json` on build) |
+| Static Serving | WhiteNoise (`CompressedManifestStaticFilesStorage`) |
+| Styling | Tailwind CSS v3.4 CLI + custom CSS tokens (`input.css`) |
+| Client Interactions | Vanilla JavaScript (`main.js`, `particles.js`) |
+| Hosting | Render (`render.yaml` Blueprint on `django-rewrite`) + GitHub Pages redirect (`main`) |
 
-## 🚀 Run Locally
+---
 
-```bash
-# 1. Clone the repo
+## Project Structure
+
+```text
+my_portfolio/
+├── index.html                           # GitHub Pages redirect on `main`
+├── render.yaml                          # Render Blueprint (build + Gunicorn start)
+├── README.md
+└── backend/
+    ├── manage.py
+    ├── requirements.txt
+    ├── tailwind.config.js               # Tailwind theme & content paths
+    ├── .env.example
+    ├── config/
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    └── portfolio/
+        ├── models.py                    # Project & RepoOverride models
+        ├── admin.py                     # Django Admin registration
+        ├── views.py                     # Landing page view + modal/cmdk JSON payloads
+        ├── portfolio_data.py            # Profile, dual resumes, skills, experience, education
+        ├── fixtures/
+        │   └── initial_data.json        # Seeded projects (7 entries)
+        ├── migrations/
+        ├── templates/portfolio/
+        │   ├── base.html
+        │   ├── index.html
+        │   └── partials/                # _navbar, _hero, _about, _skills, _projects, _experience, _education, _contact, _footer, _cmdk, _preloader
+        └── static/portfolio/
+            ├── css/                     # input.css -> tailwind.css (minified)
+            ├── files/                   # Two resume PDFs
+            ├── img/                     # og-image.png (1200x630)
+            └── js/                      # main.js, particles.js
+```
+
+---
+
+## Run Locally (Windows PowerShell)
+
+```powershell
+# 1. Clone and switch to the Django branch
 git clone https://github.com/MallaBalaRaju/my-portfolio.git
 cd my-portfolio
+git checkout django-rewrite
 
-# 2. Install dependencies
-npm install
+# 2. Create virtual environment & install Python packages
+python -m venv backend\.venv
+.\backend\.venv\Scripts\pip install -r backend\requirements.txt
 
-# 3. Start dev server  (http://localhost:5173/my-portfolio/)
-npm run dev
+# 3. Copy environment defaults
+Copy-Item backend\.env.example backend\.env
+
+# 4. Build Tailwind CSS (requires Node.js)
+npx tailwindcss -c backend/tailwind.config.js -i backend/portfolio/static/portfolio/css/input.css -o backend/portfolio/static/portfolio/css/tailwind.css --minify
+
+# 5. Migrate, seed projects, collect static files, and start server
+.\backend\.venv\Scripts\python backend\manage.py migrate
+.\backend\.venv\Scripts\python backend\manage.py loaddata initial_data
+.\backend\.venv\Scripts\python backend\manage.py collectstatic --no-input
+.\backend\.venv\Scripts\python backend\manage.py runserver
 ```
 
-## 🏗 Build & Preview
+Open `http://127.0.0.1:8000/`.
 
-```bash
-npm run build      # outputs to ./dist
-npm run preview    # serves ./dist locally at http://localhost:4173/my-portfolio/
-```
+---
 
-## 🔍 Lint & Format
+## Updating Content & Resumes
 
-```bash
-npm run lint       # ESLint (0 warnings allowed in CI)
-npm run format     # Prettier write
-```
+| What to Update | Where |
+|---|---|
+| Bio, skills, experience, education, resume labels | `backend/portfolio/portfolio_data.py` |
+| Projects (cards, architecture flow, stack, URLs) | `backend/portfolio/fixtures/initial_data.json` (or `/admin/` locally) |
+| **DevOps & Cloud Resume PDF** | Replace `backend/portfolio/static/portfolio/files/Malla_Bala_Raju_DevOps_Resume.pdf` |
+| **Full-Stack & Data Resume PDF** | Replace `backend/portfolio/static/portfolio/files/Malla_Bala_Raju_FullStack_Resume.pdf` |
 
-## 📦 Deploy
+After replacing PDFs or updating `initial_data.json` / templates, commit and push to `django-rewrite` — Render redeploys automatically.
 
-Deployment is **automatic** — push to `main` and GitHub Actions will:
+---
 
-1. Run `npm run lint`
-2. Run `npm run build`
-3. Deploy `./dist` to the `gh-pages` environment
+## Deployment Notes
 
-You can also trigger a deploy manually from **Actions → Deploy Portfolio to GitHub Pages → Run workflow**.
+- **`django-rewrite` branch**: Built and served by Render using `render.yaml` (`pip install`, Tailwind CLI `--minify`, `migrate`, conditional `loaddata initial_data`, `collectstatic`, and `gunicorn`).
+- **`main` branch**: Triggers `.github/workflows/deploy.yml` to publish `index.html` as a redirect from `https://mallabalaraju.github.io/my-portfolio/` to `https://malla-portfolio-django.onrender.com/`.
 
-> [!NOTE]
-> `vite.config.js` has `base: '/my-portfolio/'` to match the GitHub Pages sub-path.
+---
 
-## 📝 Customise Content
-
-All content lives in one file: [`src/data/portfolio.js`](./src/data/portfolio.js)
-
-| Export | What it controls |
-|--------|-----------------|
-| `personal` | Name, title, subtitle, contact info |
-| `socials` | GitHub, LinkedIn, email, resume path |
-| `about` | Bio paragraphs + highlight cards |
-| `skills` | Skill categories and items |
-| `projects` | Project cards (add `live:` URL when you deploy a project) |
-| `experience` | Certifications and training |
-| `education` | Degree and school records |
-
-## ⚠️ Items Still Needed
-
-- [ ] `public/og-image.png` — 1200×630 preview image for OG/Twitter cards
-- [ ] `public/favicon.svg` — replace the inline data-URI fallback
-- [ ] `live:` URLs in `projects` array for each deployed project
-- [ ] Correct GitHub repo URL for **Smart Resource Predictor** (currently points to profile root)
-
-## 🏷 Suggested GitHub Repo Metadata
-
-| Field | Value |
-|-------|-------|
-| **About** | Full-Stack & DevOps portfolio — React, Vite, Tailwind CSS, Framer Motion. B.Tech CSE @ LPU 2023–2027. |
-| **Website** | https://mallabalaraju.github.io/my-portfolio/ |
-| **Topics** | `react` `vite` `tailwindcss` `portfolio` `framer-motion` `github-pages` `devops` `full-stack` |
-
-## 📄 License
+## License
 
 MIT

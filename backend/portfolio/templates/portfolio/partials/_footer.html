@@ -1,24 +1,20 @@
-<footer class="relative z-10 pt-8 pb-10 px-4 overflow-hidden">
-  <!-- Glowing orb at the top center -->
+<footer class="relative z-10 pt-8 pb-10 px-4 sm:px-6 overflow-hidden">
   <div class="flex justify-center mb-6" aria-hidden="true">
     <div class="footer-orb"></div>
   </div>
 
-  <!-- Divider line -->
   <div class="section-line mb-6" aria-hidden="true"></div>
 
-  <!-- Built by text -->
-  <p class="text-center font-mono text-xs tracking-widest" style="color: var(--muted-text);">
+  <p class="text-center font-mono text-xs tracking-widest text-muted-fg">
     Built by
     <a
       href="{{ socials.github }}"
       target="_blank"
       rel="noopener noreferrer"
-      class="font-semibold transition-all duration-200 hover:underline"
-      style="color: hsl(var(--primary-h) var(--primary-s) var(--primary-l));"
+      class="font-semibold text-primary hover:underline"
     >
       {{ personal.name }}
     </a>
-    · Django · {{ current_year }}
+    · Django · Tailwind CSS · {{ current_year }}
   </p>
 </footer>

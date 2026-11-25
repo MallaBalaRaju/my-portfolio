@@ -3,16 +3,68 @@
     "model": "portfolio.project",
     "pk": 1,
     "fields": {
+      "slug": "luxeshop-ecommerce",
+      "title": "LuxeShop-ECommerce",
+      "subtitle": "Cloud-Native E-Commerce & DevOps Pipeline",
+      "category": "DevOps & Cloud",
+      "outcome": "Containerised full-stack e-commerce platform orchestrated on Kubernetes with Terraform AWS provisioning, Jenkins CI/CD, and Prometheus/Grafana observability.",
+      "description": "Multi-tier e-commerce system pairing an Nginx-fronted web app and Node.js/Express API with MongoDB, automated via Jenkins pipelines, Terraform IaC, Docker, Kubernetes, and Prometheus/Grafana metrics.",
+      "architecture": [
+        "Nginx Proxy",
+        "Node.js API",
+        "MongoDB",
+        "Docker + K8s",
+        "Terraform AWS",
+        "Prometheus"
+      ],
+      "details": [
+        "Containerised Nginx frontend and Node.js/Express backend services with Docker and Docker Compose",
+        "Defined Kubernetes deployment manifests and Jenkins CI/CD automation pipelines",
+        "Provisioned AWS ECR and EC2 infrastructure using Terraform IaC",
+        "Exposed backend /metrics endpoints scraped by Prometheus and visualised in Grafana"
+      ],
+      "stack": [
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "AWS ECR/EC2",
+        "Jenkins",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Nginx",
+        "Prometheus",
+        "Grafana"
+      ],
+      "github_url": "https://github.com/MallaBalaRaju/LuxeShop-ECommerce",
+      "live_url": "",
+      "date": "2026",
+      "featured": true,
+      "order": 1
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 2,
+    "fields": {
       "slug": "buyx",
       "title": "buyX",
       "subtitle": "Full-Stack E-Commerce Platform",
-      "outcome": "Migrated a legacy Django monolith to Next.js 15, cutting page-load time and enabling server-side rendering.",
-      "description": "Dual-sided e-commerce platform for customers and distributors with product browsing, purchasing, inventory management, and order tracking.",
+      "category": "Full-Stack",
+      "outcome": "Migrated a legacy Django storefront to Next.js 15 SSR, cutting initial page-load latency and unifying customer and distributor workflows.",
+      "description": "Dual-sided e-commerce platform for customers and distributors with product catalog browsing, inventory management, order tracking, and OTP/payment workflows.",
+      "architecture": [
+        "Next.js 15 SSR",
+        "Tailwind UI",
+        "REST API + Prisma",
+        "MySQL",
+        "Razorpay + Twilio"
+      ],
       "details": [
-        "Migrated legacy Django-based system to Next.js 15 for improved performance and scalability",
-        "Built responsive UI using Tailwind CSS and shadcn/ui component library",
-        "Integrated Razorpay for payments and Twilio for OTP/SMS notifications",
-        "Designed REST API layer with Prisma ORM and MySQL database"
+        "Migrated legacy Django-based storefront to Next.js 15 for faster rendering and modularity",
+        "Built responsive UI components using Tailwind CSS and shadcn/ui",
+        "Integrated Razorpay checkout and Twilio SMS/OTP notifications",
+        "Designed relational schemas and REST endpoints backed by Prisma ORM and MySQL"
       ],
       "stack": [
         "Next.js 15",
@@ -29,23 +81,106 @@
       "live_url": "",
       "date": "Feb 2026",
       "featured": true,
-      "order": 1
+      "order": 2
     }
   },
   {
     "model": "portfolio.project",
-    "pk": 2,
+    "pk": 3,
+    "fields": {
+      "slug": "clouddataguard",
+      "title": "CloudDataGuard",
+      "subtitle": "MongoDB Data Redundancy Removal System",
+      "category": "DevOps & Cloud",
+      "outcome": "Intercepts duplicate file and record ingestion before storage using SHA-256 cryptographic checksums, B-Tree unique indexes, and MongoDB $jsonSchema validation.",
+      "description": "Cloud storage optimisation backend built with FastAPI and MongoDB that enforces dual-layer schema validation and cryptographic deduplication with a live inspection dashboard.",
+      "architecture": [
+        "Web Dashboard",
+        "FastAPI + Pydantic",
+        "SHA-256 Checksum",
+        "MongoDB Unique Index"
+      ],
+      "details": [
+        "Implemented FastAPI + PyMongo CRUD endpoints with Pydantic and MongoDB engine-level $jsonSchema validation",
+        "Prevented duplicate storage writes using SHA-256 content hashes and B-Tree unique indexes",
+        "Logged deduplication events across decoupled records and duplicate_logs collections",
+        "Verified query execution and API behaviour with MongoDB explain() and pytest"
+      ],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "PyMongo",
+        "Pydantic",
+        "MongoDB",
+        "SHA-256",
+        "pytest"
+      ],
+      "github_url": "https://github.com/MallaBalaRaju/CloudDataGuard",
+      "live_url": "",
+      "date": "2026",
+      "featured": true,
+      "order": 3
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 4,
+    "fields": {
+      "slug": "phishscope",
+      "title": "PhishScope",
+      "subtitle": "AI Email Threat Detection & Forensics Platform",
+      "category": "Full-Stack",
+      "outcome": "Combines RFC header forensics, SPF/DKIM/DMARC alignment checks, 4 ML classifiers, infrastructure correlation, and a Gemini briefing assistant in-memory with zero disk retention.",
+      "description": "Full-stack phishing forensics workbench for SOC teams and researchers, analysing raw .eml files and headers across authentication, URL, graph, and ML pipelines.",
+      "architecture": [
+        ".eml Ingestion",
+        "SPF/DKIM/DMARC",
+        "4 ML Classifiers",
+        "Infra Graph + Gemini"
+      ],
+      "details": [
+        "Built TypeScript/Express analysis pipeline reconstructing SMTP hops and transit deltas",
+        "Implemented SPF/DKIM/DMARC provenance alignment checks and Punycode/IDN URL inspection",
+        "Trained and integrated 4 classifiers (Logistic Regression, Linear SVM, XGBoost, Transformer TF-IDF)",
+        "Added passive DNS correlation graphs, Gemini 5-pillar investigation briefs, and PDF/Excel/JSON export"
+      ],
+      "stack": [
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "XGBoost",
+        "Scikit-learn",
+        "Gemini AI",
+        "SPF/DKIM/DMARC"
+      ],
+      "github_url": "https://github.com/MallaBalaRaju/PhishScope",
+      "live_url": "",
+      "date": "2026",
+      "featured": true,
+      "order": 4
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 5,
     "fields": {
       "slug": "smart-resource-predictor",
       "title": "Smart Resource Predictor",
       "subtitle": "AI-Based Predictive Web App",
-      "outcome": "Achieved 97% forecast accuracy for energy/water usage; deployed as Flask web app with interactive dashboards.",
-      "description": "AI-based predictive system using ML models to forecast energy and water usage, exposed via a Flask web application with interactive dashboards.",
+      "category": "Data & ML",
+      "outcome": "Achieved 97% forecast accuracy for energy and water usage; exposed via a Flask web app with interactive Chart.js dashboards.",
+      "description": "Predictive analytics web application combining ensemble ML models and time-series MySQL storage to forecast sustainable energy and water consumption.",
+      "architecture": [
+        "MySQL Time-Series",
+        "Feature Engineering",
+        "XGBoost + TensorFlow",
+        "Flask + Chart.js"
+      ],
       "details": [
-        "Used Decision Tree, XGBoost, and Neural Networks (TensorFlow) for multi-model ensemble predictions",
-        "Developed a Flask web app with Chart.js interactive dashboards",
-        "Applied feature engineering and optimisation algorithms for sustainable resource usage forecasting",
-        "Stored and queried time-series data in MySQL"
+        "Combined Decision Tree, XGBoost, and Neural Networks (TensorFlow) for ensemble forecasting",
+        "Built a Flask web interface with interactive Chart.js forecast visualisations",
+        "Engineered temporal features for energy and water consumption optimisation",
+        "Persisted and queried historical time-series datasets in MySQL"
       ],
       "stack": [
         "Python",
@@ -59,23 +194,30 @@
       "github_url": "",
       "live_url": "",
       "date": "Jun 2025",
-      "featured": true,
-      "order": 2
+      "featured": false,
+      "order": 5
     }
   },
   {
     "model": "portfolio.project",
-    "pk": 3,
+    "pk": 6,
     "fields": {
       "slug": "eda-e-commerce-sales",
       "title": "EDA – E-Commerce Sales",
       "subtitle": "Exploratory Data Analysis",
-      "outcome": "Uncovered top revenue drivers and regional trends across 7,200+ transactions, surfaced in a visual report.",
-      "description": "In-depth analysis of 7,200+ e-commerce transactions to identify sales, revenue, and customer behaviour trends.",
+      "category": "Data & ML",
+      "outcome": "Analysed 7,200+ e-commerce transactions to isolate top revenue drivers, seasonality patterns, and regional performance.",
+      "description": "End-to-end exploratory data analysis notebook uncovering sales velocity, customer behaviour, and regional revenue patterns across 7,200+ transactions.",
+      "architecture": [
+        "7,200+ Rows",
+        "Pandas Cleaning",
+        "Correlation Analysis",
+        "Seaborn Report"
+      ],
       "details": [
-        "Executed data cleaning, preprocessing, and correlation analysis on 7,200+ records",
-        "Designed visual dashboards and analytical reports with Matplotlib and Seaborn",
-        "Uncovered key performance drivers and regional trends for stakeholder decision-making"
+        "Cleaned, normalised, and ran correlation analysis across 7,200+ transaction records",
+        "Generated visual breakdowns and trend plots using Matplotlib and Seaborn",
+        "Identified top revenue categories and underperforming regions"
       ],
       "stack": [
         "Python",
@@ -89,22 +231,29 @@
       "live_url": "",
       "date": "Apr 2025",
       "featured": false,
-      "order": 3
+      "order": 6
     }
   },
   {
     "model": "portfolio.project",
-    "pk": 4,
+    "pk": 7,
     "fields": {
       "slug": "top-500-crypto-coins",
       "title": "Top 500 Crypto Coins",
       "subtitle": "Power BI Dashboard",
-      "outcome": "Delivered an interactive ETL + BI dashboard tracking market caps and price trends for 500 cryptocurrencies.",
-      "description": "Interactive Power BI dashboard to visualise and analyse market trends and performance metrics of the top 500 cryptocurrencies.",
+      "category": "Data & ML",
+      "outcome": "Built an interactive ETL + Power BI workbook tracking market cap dominance, volume, and price movements across 500 cryptocurrencies.",
+      "description": "Self-service Power BI analytics dashboard built on a clean ETL pipeline to compare market caps, 24h changes, and liquidity metrics across the top 500 coins.",
+      "architecture": [
+        "Market Dataset",
+        "Power BI ETL",
+        "KPI Measures",
+        "Interactive .pbix"
+      ],
       "details": [
-        "Extracted, transformed, and loaded (ETL) cryptocurrency market data into Power BI",
-        "Designed interactive charts, slicers, and KPIs to track market caps and price trends",
-        "Created a comprehensive .pbix file for dynamic, self-service data exploration"
+        "Extracted, cleaned, and modelled market data for 500 cryptocurrencies in Power BI",
+        "Designed interactive slicers, market-cap treemaps, and trend KPIs",
+        "Packaged a reusable .pbix report for self-service exploration"
       ],
       "stack": [
         "Power BI",
@@ -116,7 +265,7 @@
       "live_url": "",
       "date": "2024",
       "featured": false,
-      "order": 4
+      "order": 7
     }
   }
 ]

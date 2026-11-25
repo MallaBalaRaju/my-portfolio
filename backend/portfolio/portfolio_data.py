@@ -1,60 +1,92 @@
-"""Static portfolio profile, skills, experience, education, and navigation content."""
+"""Static portfolio profile, dual resumes, skills, experience, education, and navigation."""
 
-# TODO: Update `github_url` for pk=2 ("smart-resource-predictor") in
+# TODO: Update `github_url` for "smart-resource-predictor" in
 # `backend/portfolio/fixtures/initial_data.json` (or via `/admin/`) once its
 # dedicated repository URL is ready.
 
 PERSONAL_DATA = {
     "name": "Malla Bala Raju",
     "short_name": "MBR",
-    "title": "Full-Stack Developer & DevOps/Cloud Enthusiast",
+    "title": "Full-Stack & DevOps Engineer",
     "subtitle": (
-        "Building and deploying scalable web applications — from React frontends "
-        "to cloud-hosted backends — with a secondary strength in data science."
+        "B.Tech CSE student at Lovely Professional University (2023–2027). "
+        "I build web applications with Django, FastAPI, and Next.js, and deploy them "
+        "with Docker, Kubernetes, Terraform, and CI/CD."
     ),
     "email": "mallabalaraju7@gmail.com",
     "phone": "+91 9989273051",
-    "location": "India",
+    "location": "Visakhapatnam / Phagwara, India",
+    "availability_label": "Open to DevOps, Cloud & Full-Stack internships",
     "available": True,
+    "hero_metrics": [
+        {"label": "Focus", "value": "DevOps & Full-Stack"},
+        {"label": "Core Infra", "value": "Docker · K8s · Terraform"},
+        {"label": "Backends", "value": "Django · FastAPI · Node.js"},
+    ],
 }
+
+RESUMES_DATA = [
+    {
+        "slug": "devops",
+        "label": "DevOps & Cloud",
+        "short_label": "DevOps / Cloud CV",
+        "focus": "Docker, Kubernetes, Terraform, AWS, CI/CD, Linux",
+        "filename": "Malla_Bala_Raju_DevOps_Resume.pdf",
+        "static_path": "portfolio/files/Malla_Bala_Raju_DevOps_Resume.pdf",
+    },
+    {
+        "slug": "fullstack",
+        "label": "Full-Stack & Data",
+        "short_label": "Full-Stack / Data CV",
+        "focus": "Django, Next.js, FastAPI, MongoDB, MySQL, Python ML",
+        "filename": "Malla_Bala_Raju_FullStack_Resume.pdf",
+        "static_path": "portfolio/files/Malla_Bala_Raju_FullStack_Resume.pdf",
+    },
+]
 
 SOCIALS_DATA = {
     "github": "https://github.com/MallaBalaRaju",
+    "github_repos": "https://github.com/MallaBalaRaju?tab=repositories",
     "linkedin": "https://www.linkedin.com/in/malla-balaraju/",
     "email": "mailto:mallabalaraju7@gmail.com",
     "phone": "tel:+919989273051",
-    "resume_static_path": "portfolio/files/Malla_Bala_Raju_Resume.pdf",
 }
 
 ABOUT_DATA = {
     "paragraphs": [
         (
             "I'm a Computer Science Engineering student at Lovely Professional University "
-            "(Minor in Data Science) targeting Full-Stack and DevOps/Cloud roles. I enjoy "
-            "building production-ready applications — writing clean React/Next.js frontends, "
-            "robust Django/Node.js backends, and wiring them together with CI/CD pipelines "
-            "and containerised deployments."
+            "(Minor in Data Science) focused on DevOps, Cloud infrastructure, and Full-Stack "
+            "engineering. I enjoy taking software from local code to repeatable containerised "
+            "deployments."
         ),
         (
-            "I've worked across the full delivery lifecycle: designing REST APIs, integrating "
-            "payment gateways (Razorpay) and messaging services (Twilio), deploying to cloud "
-            "environments, and automating builds with GitHub Actions. My NPTEL Cloud Computing "
-            "certification and hands-on Docker usage back up that interest."
+            "Across recent builds, I have provisioned AWS infrastructure with Terraform, "
+            "orchestrated multi-service apps on Docker and Kubernetes with Prometheus/Grafana "
+            "monitoring, built Django and FastAPI REST backends, and shipped Next.js and "
+            "TypeScript interfaces."
         ),
         (
-            "On the data side I use Python, Pandas, and Power BI to turn raw datasets into "
-            "actionable insights — a skill that complements my backend work and helps me "
-            "build smarter applications."
+            "Alongside backend and cloud work, I use Python, MongoDB, MySQL, and scikit-learn "
+            "/ XGBoost for data validation, anomaly detection, and analytical dashboards."
         ),
     ],
     "highlights": [
-        {"label": "Full-Stack Dev", "desc": "Next.js, React, Node.js, Django", "icon": "Code2"},
         {
-            "label": "DevOps / Cloud",
-            "desc": "Docker, CI/CD, GitHub Actions, Cloud Computing (NPTEL)",
+            "label": "DevOps & Cloud",
+            "desc": "Docker, Kubernetes, Terraform, Jenkins, GitHub Actions, Prometheus & Grafana",
             "icon": "Cloud",
         },
-        {"label": "Data Science", "desc": "Python, Pandas, Power BI, ML", "icon": "Database"},
+        {
+            "label": "Full-Stack Engineering",
+            "desc": "Django, FastAPI, Next.js 15, Node.js, TypeScript, MySQL & MongoDB",
+            "icon": "Code2",
+        },
+        {
+            "label": "Data & Applied ML",
+            "desc": "Python, Pandas, Scikit-learn, XGBoost, TensorFlow & Power BI",
+            "icon": "Database",
+        },
     ],
 }
 
@@ -63,34 +95,37 @@ SKILLS_DATA = [
         "category": "Cloud & DevOps",
         "items": [
             "Docker",
-            "GitHub Actions (CI/CD)",
-            "Cloud Computing (NPTEL)",
-            "Git & GitHub",
-            "Vercel / GitHub Pages",
+            "Kubernetes",
+            "Terraform",
+            "AWS (EC2 / ECR)",
+            "Jenkins",
+            "GitHub Actions",
+            "Nginx",
+            "Prometheus & Grafana",
+        ],
+    },
+    {
+        "category": "Backend & APIs",
+        "items": [
+            "Django",
+            "FastAPI",
+            "Node.js & Express",
+            "Flask",
+            "REST APIs",
+            "MySQL",
+            "MongoDB",
+            "Prisma",
         ],
     },
     {
         "category": "Frontend",
         "items": [
-            "React",
             "Next.js 15",
+            "React",
+            "TypeScript",
             "Tailwind CSS",
-            "shadcn/ui",
             "JavaScript (ES2024)",
             "Chart.js",
-        ],
-    },
-    {
-        "category": "Backend",
-        "items": [
-            "Django",
-            "Node.js",
-            "Flask",
-            "REST APIs",
-            "Prisma",
-            "MySQL",
-            "Razorpay API",
-            "Twilio API",
         ],
     },
     {
@@ -102,14 +137,13 @@ SKILLS_DATA = [
             "Scikit-learn",
             "XGBoost",
             "TensorFlow",
-            "Matplotlib",
-            "Seaborn",
             "Power BI",
+            "Matplotlib & Seaborn",
         ],
     },
     {
-        "category": "Languages & Tools",
-        "items": ["C", "Java", "SQL", "VS Code", "Jupyter Notebook", "Postman"],
+        "category": "Languages & Tooling",
+        "items": ["Python", "Java", "C", "SQL", "Git & GitHub", "Postman", "pytest"],
     },
 ]
 
@@ -121,10 +155,9 @@ EXPERIENCE_DATA = [
         "org": "Lovely Professional University",
         "date": "Jun 2025 – Jul 2025",
         "desc": (
-            "Intensive training on algorithmic problem-solving, OOP principles, and system "
-            "design; built a Smart Resource Predictor project using ML models (Decision Tree, "
-            "XGBoost, Neural Networks) to forecast energy/water usage with 97% accuracy, "
-            "deployed via Flask."
+            "Intensive training on algorithmic problem-solving, OOP, and system design; "
+            "built Smart Resource Predictor using Decision Tree, XGBoost, and Neural "
+            "Network models (97% forecast accuracy) served via Flask."
         ),
     },
     {
@@ -134,8 +167,8 @@ EXPERIENCE_DATA = [
         "org": "NPTEL",
         "date": "Apr 2025",
         "desc": (
-            "Comprehensive cloud computing fundamentals and architecture — IaaS, PaaS, SaaS, "
-            "virtualisation, and deployment models."
+            "Cloud computing architecture, IaaS/PaaS/SaaS models, virtualisation, "
+            "and cloud deployment fundamentals."
         ),
     },
     {
@@ -144,7 +177,7 @@ EXPERIENCE_DATA = [
         "title": "ChatGPT-4 Prompt Engineering",
         "org": "Infosys Springboard",
         "date": "Aug 2025",
-        "desc": "Advanced prompt engineering techniques for ChatGPT, Generative AI and LLMs.",
+        "desc": "Structured prompt design and evaluation patterns for LLM-assisted workflows.",
     },
     {
         "type": "certificate",
@@ -152,7 +185,7 @@ EXPERIENCE_DATA = [
         "title": "Generative AI Apps with No-Code Tools",
         "org": "Infosys Springboard",
         "date": "Aug 2025",
-        "desc": "Building generative AI applications and solutions using no-code platforms.",
+        "desc": "Rapid prototyping and workflow automation using generative AI platforms.",
     },
     {
         "type": "certificate",
@@ -160,7 +193,7 @@ EXPERIENCE_DATA = [
         "title": "Computer Communications",
         "org": "Coursera",
         "date": "Nov 2024",
-        "desc": "Networking fundamentals and computer communication protocols.",
+        "desc": "Networking layers, TCP/IP fundamentals, routing, and transport protocols.",
     },
     {
         "type": "activity",
