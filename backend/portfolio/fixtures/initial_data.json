@@ -1,0 +1,122 @@
+[
+  {
+    "model": "portfolio.project",
+    "pk": 1,
+    "fields": {
+      "slug": "buyx",
+      "title": "buyX",
+      "subtitle": "Full-Stack E-Commerce Platform",
+      "outcome": "Migrated a legacy Django monolith to Next.js 15, cutting page-load time and enabling server-side rendering.",
+      "description": "Dual-sided e-commerce platform for customers and distributors with product browsing, purchasing, inventory management, and order tracking.",
+      "details": [
+        "Migrated legacy Django-based system to Next.js 15 for improved performance and scalability",
+        "Built responsive UI using Tailwind CSS and shadcn/ui component library",
+        "Integrated Razorpay for payments and Twilio for OTP/SMS notifications",
+        "Designed REST API layer with Prisma ORM and MySQL database"
+      ],
+      "stack": [
+        "Next.js 15",
+        "React",
+        "Django",
+        "Python",
+        "Tailwind CSS",
+        "Prisma",
+        "MySQL",
+        "Razorpay API",
+        "Twilio"
+      ],
+      "github_url": "https://github.com/MallaBalaRaju/buyX",
+      "live_url": "",
+      "date": "Feb 2026",
+      "featured": true,
+      "order": 1
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 2,
+    "fields": {
+      "slug": "smart-resource-predictor",
+      "title": "Smart Resource Predictor",
+      "subtitle": "AI-Based Predictive Web App",
+      "outcome": "Achieved 97% forecast accuracy for energy/water usage; deployed as Flask web app with interactive dashboards.",
+      "description": "AI-based predictive system using ML models to forecast energy and water usage, exposed via a Flask web application with interactive dashboards.",
+      "details": [
+        "Used Decision Tree, XGBoost, and Neural Networks (TensorFlow) for multi-model ensemble predictions",
+        "Developed a Flask web app with Chart.js interactive dashboards",
+        "Applied feature engineering and optimisation algorithms for sustainable resource usage forecasting",
+        "Stored and queried time-series data in MySQL"
+      ],
+      "stack": [
+        "Python",
+        "Flask",
+        "Scikit-learn",
+        "XGBoost",
+        "TensorFlow",
+        "Chart.js",
+        "MySQL"
+      ],
+      "github_url": "",
+      "live_url": "",
+      "date": "Jun 2025",
+      "featured": true,
+      "order": 2
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 3,
+    "fields": {
+      "slug": "eda-e-commerce-sales",
+      "title": "EDA – E-Commerce Sales",
+      "subtitle": "Exploratory Data Analysis",
+      "outcome": "Uncovered top revenue drivers and regional trends across 7,200+ transactions, surfaced in a visual report.",
+      "description": "In-depth analysis of 7,200+ e-commerce transactions to identify sales, revenue, and customer behaviour trends.",
+      "details": [
+        "Executed data cleaning, preprocessing, and correlation analysis on 7,200+ records",
+        "Designed visual dashboards and analytical reports with Matplotlib and Seaborn",
+        "Uncovered key performance drivers and regional trends for stakeholder decision-making"
+      ],
+      "stack": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "Jupyter Notebook"
+      ],
+      "github_url": "https://github.com/MallaBalaRaju/DATA-VISULIZATION",
+      "live_url": "",
+      "date": "Apr 2025",
+      "featured": false,
+      "order": 3
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 4,
+    "fields": {
+      "slug": "top-500-crypto-coins",
+      "title": "Top 500 Crypto Coins",
+      "subtitle": "Power BI Dashboard",
+      "outcome": "Delivered an interactive ETL + BI dashboard tracking market caps and price trends for 500 cryptocurrencies.",
+      "description": "Interactive Power BI dashboard to visualise and analyse market trends and performance metrics of the top 500 cryptocurrencies.",
+      "details": [
+        "Extracted, transformed, and loaded (ETL) cryptocurrency market data into Power BI",
+        "Designed interactive charts, slicers, and KPIs to track market caps and price trends",
+        "Created a comprehensive .pbix file for dynamic, self-service data exploration"
+      ],
+      "stack": [
+        "Power BI",
+        "ETL",
+        "Data Analytics",
+        "Data Visualisation"
+      ],
+      "github_url": "https://github.com/MallaBalaRaju/Data-Visualization-of-top-500-crypto-coins-",
+      "live_url": "",
+      "date": "2024",
+      "featured": false,
+      "order": 4
+    }
+  }
+]

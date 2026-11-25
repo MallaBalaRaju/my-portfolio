@@ -1,0 +1,54 @@
+<section id="about" class="py-28 px-4 relative">
+  <div class="container max-w-4xl mx-auto">
+    <!-- Heading -->
+    <div>
+      <p class="text-xs font-mono text-primary mb-3 tracking-[0.2em] uppercase">
+        About Me
+      </p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-[-0.03em] text-white mb-8">
+        Full-Stack developer with a
+        <span class="gradient-text"> DevOps mindset</span>
+      </h2>
+
+      <!-- Bio paragraphs -->
+      {% for p in about.paragraphs %}
+        <p class="text-muted-fg leading-relaxed text-base md:text-lg max-w-3xl mb-6">
+          {{ p }}
+        </p>
+      {% endfor %}
+    </div>
+
+    <!-- Highlight cards -->
+    <div class="grid sm:grid-cols-3 gap-4 mt-12">
+      {% for item in about.highlights %}
+        <div class="glass glass-hover rounded-xl p-5 transition-all duration-300">
+          <div
+            class="p-2.5 rounded-lg w-fit mb-4"
+            style="background: var(--chip-bg); color: var(--p1);"
+            aria-hidden="true"
+          >
+            {% if item.icon == "Cloud" %}
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+              </svg>
+            {% elif item.icon == "Database" %}
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                <path d="M3 12A9 3 0 0 0 21 12"></path>
+              </svg>
+            {% else %}
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m18 16 4-4-4-4"></path>
+                <path d="m6 8-4 4 4 4"></path>
+                <path d="m14.5 4-5 16"></path>
+              </svg>
+            {% endif %}
+          </div>
+          <h3 class="text-sm font-semibold text-white mb-1">{{ item.label }}</h3>
+          <p class="text-xs text-muted-fg">{{ item.desc }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

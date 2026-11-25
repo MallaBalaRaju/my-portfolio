@@ -1,0 +1,25 @@
+<div
+  id="preloader"
+  class="fixed inset-0 z-[10000] flex flex-col items-center justify-center bg-[var(--bg-color)] transition-all duration-500"
+  aria-hidden="true"
+>
+  <div class="text-center">
+    <p class="text-3xl font-bold tracking-tight mb-2">
+      <span class="gradient-text">{{ personal.short_name }}</span>
+    </p>
+    <p class="text-xs font-mono tracking-widest uppercase mb-8" style="color: var(--muted-text);">
+      Loading Experience
+    </p>
+  </div>
+
+  <!-- Progress bar track -->
+  <div class="w-48 h-[2px] rounded-full overflow-hidden" style="background: var(--glass-border);">
+    <div
+      id="preloader-bar"
+      class="h-full rounded-full transition-all duration-100"
+      style="width: 0%; background: linear-gradient(90deg, hsl(var(--primary-h) 90% 55%), hsl(var(--primary2-h) 90% 65%));"
+    ></div>
+  </div>
+
+  <p id="preloader-percent" class="text-xs font-mono mt-3" style="color: var(--muted-text);">0%</p>
+</div>

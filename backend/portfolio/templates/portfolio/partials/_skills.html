@@ -1,0 +1,70 @@
+<section id="skills" class="py-28 px-4 relative">
+  <div class="container max-w-4xl mx-auto">
+    <!-- Heading -->
+    <div>
+      <p class="text-xs font-mono text-primary mb-3 tracking-[0.2em] uppercase">
+        Skills
+      </p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-[-0.03em] text-white mb-12">
+        My <span class="gradient-text">Technical Stack</span>
+      </h2>
+    </div>
+
+    <!-- Skill grid -->
+    <div class="grid md:grid-cols-2 gap-5">
+      {% for cat in skills %}
+        <div
+          class="glass glass-hover rounded-xl p-6 transition-all duration-300 {% if cat.category == 'Cloud & DevOps' %}md:col-span-2{% endif %}"
+        >
+          <!-- Category header -->
+          <div class="flex items-center gap-2 mb-5">
+            <div
+              class="p-1.5 rounded-md"
+              style="background: var(--chip-bg); color: var(--p1);"
+              aria-hidden="true"
+            >
+              {% if cat.category == "Cloud & DevOps" %}
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                </svg>
+              {% elif cat.category == "Backend" %}
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect>
+                  <rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect>
+                  <line x1="6" x2="6.01" y1="6" y2="6"></line>
+                  <line x1="6" x2="6.01" y1="18" y2="18"></line>
+                </svg>
+              {% elif cat.category == "Data Science & ML" %}
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M3 5V19A9 3 0 0 0 21 19V5"></path>
+                  <path d="M3 12A9 3 0 0 0 21 12"></path>
+                </svg>
+              {% elif cat.category == "Languages & Tools" %}
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              {% else %}
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m18 16 4-4-4-4"></path>
+                  <path d="m6 8-4 4 4 4"></path>
+                  <path d="m14.5 4-5 16"></path>
+                </svg>
+              {% endif %}
+            </div>
+            <h3 class="text-xs font-mono text-primary uppercase tracking-[0.15em]">
+              {{ cat.category }}
+            </h3>
+          </div>
+
+          <!-- Chips -->
+          <div class="flex flex-wrap gap-2" aria-label="{{ cat.category }} skills">
+            {% for skill in cat.items %}
+              <span class="skill-chip">{{ skill }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

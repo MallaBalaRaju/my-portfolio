@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: malla-portfolio-django
+    runtime: python
+    region: singapore
+    branch: django-rewrite
+    buildCommand: |
+      pip install -r backend/requirements.txt &&
+      npm install --no-save tailwindcss@^3.4.14 &&
+      npx tailwindcss -c backend/tailwind.config.js -i backend/portfolio/static/portfolio/css/input.css -o backend/portfolio/static/portfolio/css/tailwind.css --minify &&
+      python backend/manage.py migrate --no-input &&
+      python backend/manage.py shell -c "from portfolio.models import Project; from django.core.management import call_command; (not Project.objects.exists()) and call_command('loaddata', 'initial_data')" &&
+      python backend/manage.py collectstatic --no-input
+    startCommand: gunicorn --chdir backend config.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: malla-portfolio-django.onrender.com
+      - key: DATABASE_URL
+        sync: false
+      - key: GITHUB_USERNAME
+        value: MallaBalaRaju
+      - key: PYTHON_VERSION
+        value: "3.14.2"
+    autoDeploy: true

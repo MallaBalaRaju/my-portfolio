@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary meta -->
+    <title>{% block title %}{{ personal.name }} | Full-Stack &amp; DevOps Developer{% endblock %}</title>
+    <meta
+      name="description"
+      content="Malla Bala Raju — B.Tech CSE student (LPU 2023–2027) specialising in Full-Stack development (Next.js, React, Django) and DevOps/Cloud (Docker, CI/CD, GitHub Actions). Open to internships and fresher roles."
+    />
+    <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ personal.name }} | Full-Stack &amp; DevOps Developer" />
+    <meta
+      property="og:description"
+      content="B.Tech CSE student (LPU 2023–2027) building production-ready web apps with Next.js, Django, Docker and CI/CD. Open to DevOps/Cloud/Full-Stack internships."
+    />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ personal.name }} | Full-Stack &amp; DevOps Developer" />
+    <meta
+      name="twitter:description"
+      content="B.Tech CSE student building scalable web apps and cloud deployments. Open to internships."
+    />
+
+    <!-- JSON-LD Person schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Malla Bala Raju",
+      "email": "mailto:mallabalaraju7@gmail.com",
+      "jobTitle": "Full-Stack Developer & DevOps Enthusiast",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Lovely Professional University"
+      },
+      "sameAs": [
+        "https://github.com/MallaBalaRaju",
+        "https://www.linkedin.com/in/malla-balaraju/"
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="{% static 'portfolio/css/tailwind.css' %}" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    {% block content %}{% endblock %}
+
+    <script src="{% static 'portfolio/js/particles.js' %}" defer></script>
+    <script src="{% static 'portfolio/js/main.js' %}" defer></script>
+  </body>
+</html>
