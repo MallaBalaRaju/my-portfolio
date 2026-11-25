@@ -1,7 +1,6 @@
 from datetime import datetime
 
 from django.shortcuts import render
-from django.templatetags.static import static
 
 from .models import Project
 from .portfolio_data import (
@@ -41,21 +40,6 @@ def index(request):
         for p in projects
     ]
 
-    cmdk_data = {
-        "resumes": [
-            {
-                "label": r["label"],
-                "focus": r["focus"],
-                "url": static(r["static_path"]),
-            }
-            for r in RESUMES_DATA
-        ],
-        "email": PERSONAL_DATA["email"],
-        "phone": PERSONAL_DATA["phone"],
-        "github": SOCIALS_DATA["github"],
-        "linkedin": SOCIALS_DATA["linkedin"],
-    }
-
     return render(
         request,
         "portfolio/index.html",
@@ -63,7 +47,6 @@ def index(request):
             "projects": projects,
             "categories": categories,
             "projects_data": projects_data,
-            "cmdk_data": cmdk_data,
             "resumes": RESUMES_DATA,
             "personal": PERSONAL_DATA,
             "socials": SOCIALS_DATA,

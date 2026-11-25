@@ -13,9 +13,8 @@ Personal engineering portfolio for **Malla Bala Raju** (B.Tech CSE, Lovely Profe
 - **Dual Targeted Resumes**:
   - **DevOps & Cloud Resume** (`Malla_Bala_Raju_DevOps_Resume.pdf`)
   - **Full-Stack & Data Resume** (`Malla_Bala_Raju_FullStack_Resume.pdf`)
-  - Accessible from the Navbar `Resumes` menu, Hero CTAs, `Ctrl+K` palette, and Contact section (inline View + PDF Download).
+  - Accessible from the Navbar `Resumes` menu, Hero CTAs, and Contact section (inline View + PDF Download).
 - **7 Filterable Projects** backed by Django ORM (`Project` model) with category filters (`All`, `DevOps & Cloud`, `Full-Stack`, `Data & ML`), architecture flow diagrams, and an interactive detail modal.
-- **`Ctrl+K` / `/` Command Palette**: Keyboard-driven quick jump across sections, projects, both resumes, and clipboard copy actions.
 - **One-Click Contact Copy + Toast**: Copy email or phone directly from the Contact section.
 - **Accessibility & SEO**: Skip-to-content link, `prefers-reduced-motion` guards, keyboard modal controls, Open Graph + Twitter Card tags with a `1200×630` preview image, and JSON-LD `Person` schema.
 
@@ -53,7 +52,7 @@ my_portfolio/
     └── portfolio/
         ├── models.py                    # Project & RepoOverride models
         ├── admin.py                     # Django Admin registration
-        ├── views.py                     # Landing page view + modal/cmdk JSON payloads
+        ├── views.py                     # Landing page view + modal JSON payload
         ├── portfolio_data.py            # Profile, dual resumes, skills, experience, education
         ├── fixtures/
         │   └── initial_data.json        # Seeded projects (7 entries)
@@ -61,7 +60,7 @@ my_portfolio/
         ├── templates/portfolio/
         │   ├── base.html
         │   ├── index.html
-        │   └── partials/                # _navbar, _hero, _about, _skills, _projects, _experience, _education, _contact, _footer, _cmdk, _preloader
+        │   └── partials/                # _navbar, _hero, _about, _skills, _projects, _experience, _education, _contact, _footer, _preloader
         └── static/portfolio/
             ├── css/                     # input.css -> tailwind.css (minified)
             ├── files/                   # Two resume PDFs
