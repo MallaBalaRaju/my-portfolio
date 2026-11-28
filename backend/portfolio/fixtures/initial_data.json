@@ -1,5 +1,160 @@
 [
   {
+    "model": "portfolio.siteprofile",
+    "pk": 1,
+    "fields": {
+      "name": "Malla Bala Raju",
+      "short_name": "MBR",
+      "title": "Full-Stack & DevOps Engineer",
+      "subtitle": "B.Tech CSE student at Lovely Professional University (2023–2027). I build web applications with Django, FastAPI, and Next.js, and deploy them with Docker, Kubernetes, Terraform, and CI/CD.",
+      "email": "mallabalaraju7@gmail.com",
+      "phone": "+91 9989273051",
+      "location": "Visakhapatnam / Phagwara, India",
+      "availability_label": "Open to DevOps, Cloud & Full-Stack internships",
+      "available": true,
+      "github_url": "https://github.com/MallaBalaRaju",
+      "linkedin_url": "https://www.linkedin.com/in/malla-balaraju/",
+      "hero_metrics": [
+        {"label": "Focus", "value": "DevOps & Full-Stack"},
+        {"label": "Core Infra", "value": "Docker · K8s · Terraform"},
+        {"label": "Backends", "value": "Django · FastAPI · Node.js"}
+      ],
+      "about_paragraphs": [
+        "I'm a Computer Science Engineering student at Lovely Professional University (Minor in Data Science) focused on DevOps, Cloud infrastructure, and Full-Stack engineering. I enjoy taking software from local code to repeatable containerised deployments.",
+        "Across recent builds, I have provisioned AWS infrastructure with Terraform, orchestrated multi-service apps on Docker and Kubernetes with Prometheus/Grafana monitoring, built Django and FastAPI REST backends, and shipped Next.js and TypeScript interfaces.",
+        "Alongside backend and cloud work, I use Python, MongoDB, MySQL, and scikit-learn / XGBoost for data validation, anomaly detection, and analytical dashboards."
+      ],
+      "about_highlights": [
+        {
+          "label": "DevOps & Cloud",
+          "desc": "Docker, Kubernetes, Terraform, Jenkins, GitHub Actions, Prometheus & Grafana",
+          "icon": "Cloud"
+        },
+        {
+          "label": "Full-Stack Engineering",
+          "desc": "Django, FastAPI, Next.js 15, Node.js, TypeScript, MySQL & MongoDB",
+          "icon": "Code2"
+        },
+        {
+          "label": "Data & Applied ML",
+          "desc": "Python, Pandas, Scikit-learn, XGBoost, TensorFlow & Power BI",
+          "icon": "Database"
+        }
+      ]
+    }
+  },
+  {
+    "model": "portfolio.resume",
+    "pk": 1,
+    "fields": {
+      "slug": "devops",
+      "label": "DevOps & Cloud",
+      "short_label": "DevOps / Cloud CV",
+      "focus": "Docker, Kubernetes, Terraform, AWS, CI/CD, Linux",
+      "filename": "Malla_Bala_Raju_DevOps_Resume.pdf",
+      "static_path": "portfolio/files/Malla_Bala_Raju_DevOps_Resume.pdf",
+      "external_url": "",
+      "is_active": true,
+      "order": 1
+    }
+  },
+  {
+    "model": "portfolio.resume",
+    "pk": 2,
+    "fields": {
+      "slug": "fullstack",
+      "label": "Full-Stack & Data",
+      "short_label": "Full-Stack / Data CV",
+      "focus": "Django, Next.js, FastAPI, MongoDB, MySQL, Python ML",
+      "filename": "Malla_Bala_Raju_FullStack_Resume.pdf",
+      "static_path": "portfolio/files/Malla_Bala_Raju_FullStack_Resume.pdf",
+      "external_url": "",
+      "is_active": true,
+      "order": 2
+    }
+  },
+  {
+    "model": "portfolio.skillcategory",
+    "pk": 1,
+    "fields": {
+      "category": "Cloud & DevOps",
+      "items": [
+        "Docker & Docker Compose",
+        "Kubernetes (Minikube)",
+        "Terraform",
+        "AWS (EC2 / ECR)",
+        "Jenkins",
+        "GitHub Actions",
+        "Linux (Ubuntu)",
+        "Nginx",
+        "Prometheus & Grafana"
+      ],
+      "order": 1
+    }
+  },
+  {
+    "model": "portfolio.skillcategory",
+    "pk": 2,
+    "fields": {
+      "category": "Backend & APIs",
+      "items": [
+        "Django",
+        "FastAPI",
+        "Node.js & Express",
+        "Flask",
+        "REST APIs",
+        "MySQL",
+        "MongoDB",
+        "SQLite",
+        "Prisma"
+      ],
+      "order": 2
+    }
+  },
+  {
+    "model": "portfolio.skillcategory",
+    "pk": 3,
+    "fields": {
+      "category": "Frontend",
+      "items": [
+        "Next.js 15",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "JavaScript (ES2024)",
+        "Chart.js"
+      ],
+      "order": 3
+    }
+  },
+  {
+    "model": "portfolio.skillcategory",
+    "pk": 4,
+    "fields": {
+      "category": "Data Science & ML",
+      "items": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "XGBoost",
+        "TensorFlow",
+        "Power BI",
+        "Matplotlib & Seaborn"
+      ],
+      "order": 4
+    }
+  },
+  {
+    "model": "portfolio.skillcategory",
+    "pk": 5,
+    "fields": {
+      "category": "Languages & Tooling",
+      "items": ["Python", "Java", "C", "SQL", "Git & GitHub", "Postman", "pytest"],
+      "order": 5
+    }
+  },
+  {
     "model": "portfolio.project",
     "pk": 1,
     "fields": {
@@ -266,6 +421,165 @@
       "date": "2024",
       "featured": false,
       "order": 7
+    }
+  },
+  {
+    "model": "portfolio.experience",
+    "pk": 1,
+    "fields": {
+      "entry_type": "certificate",
+      "icon": "Award",
+      "title": "Full Stack Developer Course",
+      "org": "Simplilearn",
+      "date": "May 2026",
+      "description": "End-to-end full-stack web development covering frontend frameworks, backend APIs, and database integration.",
+      "order": 1
+    }
+  },
+  {
+    "model": "portfolio.experience",
+    "pk": 2,
+    "fields": {
+      "entry_type": "certificate",
+      "icon": "Award",
+      "title": "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+      "org": "Oracle",
+      "date": "Apr 2026",
+      "description": "Foundational concepts in AI, machine learning, deep learning, and generative AI workloads on Oracle Cloud Infrastructure.",
+      "order": 2
+    }
+  },
+  {
+    "model": "portfolio.experience",
+    "pk": 3,
+    "fields": {
+      "entry_type": "certificate",
+      "icon": "Award",
+      "title": "Oracle Data Platform 2025 Certified Foundations Associate",
+      "org": "Oracle",
+      "date": "Apr 2026",
+      "description": "Core cloud data platform architecture, storage, analytics, and database services on Oracle Cloud.",
+      "order": 3
+    }
+  },
+  {
+    "model": "portfolio.experience",
+    "pk": 4,
+    "fields": {
+      "entry_type": "training",
+      "icon": "Briefcase",
+      "title": "Smart Resource Management Application Development",
+      "org": "Lovely Professional University",
+      "date": "Jun 2025 – Jul 2025",
+      "description": "Summer training building a smart resource conservation web application with Python, Scikit-learn, Flask, and MySQL to forecast household energy and water usage.",
+      "order": 4
+    }
+  },
+  {
+    "model": "portfolio.experience",
+    "pk": 5,
+    "fields": {
+      "entry_type": "certificate",
+      "icon": "Award",
+      "title": "Cloud Computing",
+      "org": "NPTEL",
+      "date": "Apr 2025",
+      "description": "Cloud computing architecture, IaaS/PaaS/SaaS models, virtualisation, and cloud deployment fundamentals.",
+      "order": 5
+    }
+  },
+  {
+    "model": "portfolio.experience",
+    "pk": 6,
+    "fields": {
+      "entry_type": "certificate",
+      "icon": "Award",
+      "title": "ChatGPT-4 Prompt Engineering: Generative AI & LLM",
+      "org": "Infosys Springboard",
+      "date": "Aug 2025",
+      "description": "Structured prompt design and evaluation patterns for LLM-assisted workflows.",
+      "order": 6
+    }
+  },
+  {
+    "model": "portfolio.experience",
+    "pk": 7,
+    "fields": {
+      "entry_type": "certificate",
+      "icon": "BookOpen",
+      "title": "Computer Communications",
+      "org": "Coursera",
+      "date": "Nov 2024",
+      "description": "Networking layers, TCP/IP fundamentals, routing, and transport protocols.",
+      "order": 7
+    }
+  },
+  {
+    "model": "portfolio.experience",
+    "pk": 8,
+    "fields": {
+      "entry_type": "certificate",
+      "icon": "BookOpen",
+      "title": "Introduction to Hardware and Operating Systems",
+      "org": "Coursera",
+      "date": "Sep 2024",
+      "description": "Computer hardware architecture, OS process management, memory, and storage fundamentals.",
+      "order": 8
+    }
+  },
+  {
+    "model": "portfolio.experience",
+    "pk": 9,
+    "fields": {
+      "entry_type": "activity",
+      "icon": "Award",
+      "title": "Community Development Project",
+      "org": "NGO Supervised",
+      "date": "Jun 2024",
+      "description": "Completed a 40-hour community development project under NGO supervision.",
+      "order": 9
+    }
+  },
+  {
+    "model": "portfolio.education",
+    "pk": 1,
+    "fields": {
+      "degree": "Bachelor of Technology",
+      "field": "Computer Science & Engineering",
+      "school": "Lovely Professional University",
+      "location": "Phagwara, Punjab",
+      "period": "Aug 2023 – Aug 2027",
+      "grade": "CGPA: 6.9",
+      "highlight": "Minor in Data Science",
+      "order": 1
+    }
+  },
+  {
+    "model": "portfolio.education",
+    "pk": 2,
+    "fields": {
+      "degree": "Intermediate (12th)",
+      "field": "MPC (Mathematics, Physics, Chemistry)",
+      "school": "Narayana Junior College",
+      "location": "Visakhapatnam, AP",
+      "period": "Apr 2022 – Mar 2023",
+      "grade": "86.6%",
+      "highlight": "",
+      "order": 2
+    }
+  },
+  {
+    "model": "portfolio.education",
+    "pk": 3,
+    "fields": {
+      "degree": "Matriculation (10th)",
+      "field": "",
+      "school": "Narayana High School",
+      "location": "Visakhapatnam, AP",
+      "period": "Apr 2020 – Mar 2021",
+      "grade": "CGPA: 10.0",
+      "highlight": "",
+      "order": 3
     }
   }
 ]

@@ -10,7 +10,7 @@ services:
       npm install --no-save tailwindcss@^3.4.14 &&
       npx tailwindcss -c backend/tailwind.config.js -i backend/portfolio/static/portfolio/css/input.css -o backend/portfolio/static/portfolio/css/tailwind.css --minify &&
       python backend/manage.py migrate --no-input &&
-      python backend/manage.py shell -c "from portfolio.models import Project; from django.core.management import call_command; (not Project.objects.exists()) and call_command('loaddata', 'initial_data')" &&
+      python backend/manage.py shell -c "from portfolio.models import SiteProfile; from django.core.management import call_command; (not SiteProfile.objects.exists()) and call_command('loaddata', 'initial_data')" &&
       python backend/manage.py shell -c "import os; from django.contrib.auth import get_user_model; U=get_user_model(); u=os.getenv('DJANGO_SUPERUSER_USERNAME'); p=os.getenv('DJANGO_SUPERUSER_PASSWORD'); e=os.getenv('DJANGO_SUPERUSER_EMAIL',''); (u and p and not U.objects.filter(username=u).exists()) and U.objects.create_superuser(username=u, email=e, password=p)" &&
       python backend/manage.py collectstatic --no-input
     startCommand: gunicorn --chdir backend config.wsgi:application --bind 0.0.0.0:$PORT
