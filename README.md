@@ -28,7 +28,7 @@ Personal engineering portfolio for **Malla Bala Raju** (B.Tech CSE, Lovely Profe
 | Database | SQLite (`backend/db.sqlite3`, auto-seeded from `initial_data.json` on build) |
 | Static Serving | WhiteNoise (`CompressedManifestStaticFilesStorage`) |
 | Styling | Tailwind CSS v3.4 CLI + custom CSS tokens (`input.css`) |
-| Client Interactions | Vanilla JavaScript (`main.js`, `particles.js`) |
+| Client Interactions | Vanilla JavaScript (`main.js`) |
 | Hosting | Render (`render.yaml` Blueprint on `django-rewrite`) + GitHub Pages redirect (`main`) |
 
 ---
@@ -50,7 +50,7 @@ my_portfolio/
     │   ├── urls.py
     │   └── wsgi.py
     └── portfolio/
-        ├── models.py                    # Project & RepoOverride models
+        ├── models.py                    # Project model
         ├── admin.py                     # Django Admin registration
         ├── views.py                     # Landing page view + modal JSON payload
         ├── portfolio_data.py            # Profile, dual resumes, skills, experience, education
@@ -60,12 +60,12 @@ my_portfolio/
         ├── templates/portfolio/
         │   ├── base.html
         │   ├── index.html
-        │   └── partials/                # _navbar, _hero, _about, _skills, _projects, _experience, _education, _contact, _footer, _preloader
+        │   └── partials/                # _navbar, _hero, _about, _skills, _projects, _experience, _education, _contact, _footer
         └── static/portfolio/
             ├── css/                     # input.css -> tailwind.css (minified)
             ├── files/                   # Two resume PDFs
             ├── img/                     # og-image.png (1200x630)
-            └── js/                      # main.js, particles.js
+            └── js/                      # main.js
 ```
 
 ---

@@ -1,28 +1,14 @@
 {% extends "portfolio/base.html" %}
-{% load static %}
 
 {% block content %}
-  {% include "portfolio/partials/_preloader.html" %}
-
   <div class="min-h-screen relative">
     <!-- Scroll progress bar -->
     <div
       id="scroll-progress"
-      class="fixed top-0 left-0 right-0 h-[2px] z-[200] origin-left"
-      style="transform: scaleX(0); background: linear-gradient(90deg, #10B981, #38BDF8);"
+      class="fixed top-0 left-0 right-0 h-0.5 z-[200] origin-left bg-primary"
+      style="transform: scaleX(0);"
       aria-hidden="true"
     ></div>
-
-    <!-- Particle background canvas -->
-    <canvas
-      id="particle-canvas"
-      class="fixed inset-0 pointer-events-none z-0"
-      style="opacity: 0.45; will-change: transform;"
-      aria-hidden="true"
-    ></canvas>
-
-    <!-- Subtle top wash (Obsidian & Signal Mint) -->
-    <div class="fixed inset-0 hero-wash pointer-events-none z-0" aria-hidden="true"></div>
 
     <!-- Navigation -->
     {% include "portfolio/partials/_navbar.html" %}
@@ -43,12 +29,11 @@
   </div>
 
   <!-- Copy Toast -->
-
   <div
     id="copy-toast"
     role="status"
     aria-live="polite"
-    class="hidden opacity-0 translate-y-2 fixed bottom-5 right-5 z-[300] px-4 py-2.5 rounded-xl bg-card border border-primary/40 text-xs font-mono text-white shadow-xl transition-all duration-200 flex items-center gap-2"
+    class="hidden opacity-0 translate-y-2 fixed bottom-5 right-5 z-[300] px-4 py-2.5 rounded-xl bg-card border border-primary/40 text-xs font-mono text-white shadow-xl transition-[transform,opacity] duration-200 flex items-center gap-2"
   >
     <span class="w-2 h-2 rounded-full bg-primary" aria-hidden="true"></span>
     <span id="copy-toast-message">Copied</span>

@@ -7,33 +7,7 @@
     document.body.classList.add("reduce-motion");
   }
 
-  /* ── Preloader ───────────────────────────────────────────── */
-  const preloader = document.getElementById("preloader");
-  const preloaderBar = document.getElementById("preloader-bar");
-  const preloaderPercent = document.getElementById("preloader-percent");
-
-  if (preloader) {
-    if (prefersReducedMotion) {
-      preloader.remove();
-    } else {
-      let progress = 0;
-      const interval = setInterval(() => {
-        progress = Math.min(progress + Math.random() * 22 + 12, 100);
-        if (preloaderBar) preloaderBar.style.width = `${progress}%`;
-        if (preloaderPercent) preloaderPercent.textContent = `${Math.round(progress)}%`;
-
-        if (progress >= 100) {
-          clearInterval(interval);
-          setTimeout(() => {
-            preloader.style.opacity = "0";
-            setTimeout(() => preloader.remove(), 350);
-          }, 180);
-        }
-      }, 55);
-    }
-  }
-
-  /* ── Toast Feedback (Idea 2) ─────────────────────────────── */
+  /* ── Toast Feedback ──────────────────────────────────────── */
   const toastEl = document.getElementById("copy-toast");
   const toastMsgEl = document.getElementById("copy-toast-message");
   let toastTimer = null;
@@ -48,7 +22,7 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => {
       toastEl.classList.add("opacity-0", "translate-y-2");
-      setTimeout(() => toastEl.classList.add("hidden"), 220);
+      setTimeout(() => toastEl.classList.add("hidden"), 200);
     }, 2200);
   }
 
@@ -123,7 +97,7 @@
 
     if (navbar) {
       const scrolled = scrollTop > 20;
-      navbar.classList.toggle("glass-nav", scrolled);
+      navbar.classList.toggle("nav-bar-scrolled", scrolled);
       navbar.classList.toggle("bg-transparent", !scrolled);
     }
 
@@ -164,7 +138,11 @@
     });
 
     document.addEventListener("click", (e) => {
-      if (!resumeMenu.classList.contains("hidden") && !resumeMenu.contains(e.target) && e.target !== resumeBtn) {
+      if (
+        !resumeMenu.classList.contains("hidden") &&
+        !resumeMenu.contains(e.target) &&
+        e.target !== resumeBtn
+      ) {
         setResumeMenu(false);
       }
     });
@@ -229,9 +207,10 @@
     });
   });
 
-  /* ── Project Detail Modal ────────────────────────────────── */
+  /* ── Project Detail Modal (with Tab focus trap) ──────────── */
   const projectsJsonEl = document.getElementById("projects-data");
   const modal = document.getElementById("project-modal");
+  const modalDialog = document.getElementById("project-modal-dialog");
   const modalBackdrop = document.getElementById("project-modal-backdrop");
   const modalCloseBtn = document.getElementById("project-modal-close");
 
@@ -244,7 +223,7 @@
     }
   }
 
-  if (modal) {
+  if (modal && modalDialog) {
     const projectsById = new Map(projectsList.map((p) => [String(p.id), p]));
     const modalCategory = document.getElementById("project-modal-category");
     const modalTitle = document.getElementById("project-modal-title");
@@ -259,6 +238,14 @@
     const modalLive = document.getElementById("project-modal-live");
 
     let lastFocusedEl = null;
+
+    function getFocusableInModal() {
+      return Array.from(
+        modalDialog.querySelectorAll(
+          'a[href]:not(.hidden), button:not([disabled]):not(.hidden), [tabindex]:not([tabindex="-1"]):not(.hidden)'
+        )
+      ).filter((el) => el.offsetParent !== null);
+    }
 
     function openModal(projectId) {
       const project = projectsById.get(String(projectId));
@@ -388,10 +375,27 @@
 
     if (modalCloseBtn) modalCloseBtn.addEventListener("click", closeModal);
     if (modalBackdrop) modalBackdrop.addEventListener("click", closeModal);
+
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         closeModal();
         setResumeMenu(false);
+        return;
+      }
+
+      if (e.key === "Tab" && !modal.classList.contains("hidden")) {
+        const focusable = getFocusableInModal();
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     });
   }

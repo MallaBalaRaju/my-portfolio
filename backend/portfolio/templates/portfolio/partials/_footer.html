@@ -1,11 +1,7 @@
-<footer class="relative z-10 pt-8 pb-10 px-4 sm:px-6 overflow-hidden">
-  <div class="flex justify-center mb-6" aria-hidden="true">
-    <div class="footer-orb"></div>
-  </div>
-
+<footer class="relative z-10 pt-4 pb-10 px-4 sm:px-6">
   <div class="section-line mb-6" aria-hidden="true"></div>
 
-  <p class="text-center font-mono text-xs tracking-widest text-muted-fg">
+  <p class="text-center font-mono text-xs tracking-wide text-muted-fg">
     Built by
     <a
       href="{{ socials.github }}"
@@ -15,6 +11,6 @@
     >
       {{ personal.name }}
     </a>
-    · Django · Tailwind CSS · {{ current_year }}
+    · Django · Tailwind CSS · <span class="tabular-nums">{{ current_year }}</span>
   </p>
 </footer>

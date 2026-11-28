@@ -24,19 +24,3 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
-
-
-class RepoOverride(models.Model):
-    """Admin curation rules retained for database schema compatibility."""
-
-    repo_name = models.CharField(max_length=100, unique=True)
-    hidden = models.BooleanField(default=False)
-    featured = models.BooleanField(default=False)
-    note = models.TextField(blank=True)
-    order = models.PositiveIntegerField(default=0)
-
-    class Meta:
-        ordering = ["order", "repo_name"]
-
-    def __str__(self):
-        return self.repo_name
